@@ -1,6 +1,4 @@
 
-<!--horizontal divider(gradiant)-->
-<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 # LeetCode Python Solutions
 
 Welcome to my LeetCode Python Solutions repository! Here, you'll find my daily solutions to various LeetCode problems, all implemented in Python.
