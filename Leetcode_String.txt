@@ -1,0 +1,48 @@
+                                                 QUESTION :- 844. Backspace String Compare
+
+
+Given two strings s and t, return true if they are equal when both are typed into empty text editors. '#' means a backspace character.
+Note that after backspacing an empty text, the text will continue empty.
+
+Example 1:
+
+Input: s = "ab#c", t = "ad#c"
+Output: true
+Explanation: Both s and t become "ac".
+
+Example 2:
+Input: s = "ab##", t = "c#d#"
+Output: true
+Explanation: Both s and t become "".
+
+Example 3:
+Input: s = "a#c", t = "b"
+Output: false
+Explanation: s becomes "c" while t becomes "b".
+
+Class Definition:
+We define a class named Solution to encapsulate the solution logic.
+
+Method Definition:
+The backspaceCompare method is defined within the Solution class. It takes two parameters, s and t, both of type str, and returns a boolean value (True or False).
+
+Helper Function - process_string:
+Inside the backspaceCompare method, we define a helper function called process_string. This function takes a string s and processes it to handle backspaces.
+
+Stack for Simulating Backspaces:
+Inside process_string, we create an empty list called stack. This list will act like a stack to help us process the characters while handling backspaces.
+
+Loop Through Characters:
+We loop through each character, char, in the input string s.
+
+Processing Non-Backspace Characters:
+If the current character char is not a backspace ('#'), we simply append it to the stack. This means that non-backspace characters are added to the stack as they are.
+
+Handling Backspaces:
+If the current character char is a backspace ('#'), we check if the stack is not empty. If the stack is not empty, we remove (pop) the last character from the stack. This simulates the effect of the backspace operation.
+
+Returning Processed String:
+After processing all characters in the input string, we return the processed string by joining the characters in the stack using join.
+
+Comparison and Returning Result:
+Finally, we compare the processed strings of both input strings s and t using the == operator. If the processed strings are equal, it means that both input strings are equivalent after backspace processing, and we return True. Otherwise, we return False.

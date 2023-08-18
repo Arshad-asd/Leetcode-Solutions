@@ -1,0 +1,40 @@
+                                               Array Questiions 
+
+QUESTIOIN NO : 896. Monotonic Array
+
+```python
+class Solution:
+    def isMonotonic(self, nums: List[int]) -> bool:
+        increasing = decreasing = True
+        
+        for i in range(1, len(nums)):
+            if nums[i] > nums[i - 1]:
+                decreasing = False
+            elif nums[i] < nums[i - 1]:
+                increasing = False
+        
+        return increasing or decreasing
+```
+
+1. The `Solution` class is defined, which contains the `isMonotonic` method to determine whether a list of numbers is monotonic.
+
+2. `increasing` and `decreasing` are initialized to `True`. These variables will be used to track whether the list is increasing or decreasing.
+
+3. The `for` loop iterates through the `nums` list starting from the second element (index 1). The loop compares each number with its previous number.
+
+4. If `nums[i]` is greater than `nums[i - 1]`, it means the list is not decreasing, so we set `decreasing` to `False`.
+
+5. If `nums[i]` is less than `nums[i - 1]`, it means the list is not increasing, so we set `increasing` to `False`.
+
+6. After iterating through the entire list, the function returns `True` if either `increasing` or `decreasing` is `True`. This means the list is either entirely non-increasing or entirely non-decreasing.
+
+7. If both `increasing` and `decreasing` are `False`, it means the list is neither entirely non-increasing nor entirely non-decreasing, so the function returns `False`.
+
+Here's how the function works with the provided input `nums = [1, 3, 2]`:
+
+- The loop starts with `i = 1`, comparing `3` and `1`. Since `3` is greater than `1`, `decreasing` becomes `False`.
+- The loop continues with `i = 2`, comparing `2` and `3`. Since `2` is less than `3`, `increasing` becomes `False`.
+
+At the end of the loop, both `increasing` and `decreasing` are `False`, indicating that the list `[1, 3, 2]` is neither entirely non-increasing nor entirely non-decreasing. Therefore, the function correctly returns `False`, matching the expected output.
+
+<---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
