@@ -1,10 +1,8 @@
-
-<!--Animated Text--!>
+<!--Animated Text-->
 <p align="center">
-  <a href="https://github.com/DenverCoder1/readme-typing-svg"><img src="https://readme-typing-svg.herokuapp.com?lines=LeetCode+Solutions;+Easy+Medium+Hard+Solutions; Motivation;DS%20|%20AI%20|%20ML%20Enthusiast;Graphic%20Designer;Always%20learning%20new%20things&center=true&width=500&height=50"></a>
+  <a href="https://github.com/DenverCoder1/readme-typing-svg"><img src="https://readme-typing-svg.herokuapp.com?lines=Welcome+To+My+LeetCode+Solutions+Repository!;+Easy+Medium+Hard+Solutions;DS%20|%20PYTHON%20|%20JAVASCRIPT%20SQL;%20I+encourage+contributions+to+this+repository!;Always%20learning%20new%20things%20Happy+coding!&center=true&width=500&height=50"></a>
 </p>
 
-Welcome to my LeetCode Python Solutions repository! Here, you'll find my daily solutions to various LeetCode problems, all implemented in Python.
 
 ## About
 
@@ -17,6 +15,8 @@ This repository contains a collection of Python solutions to LeetCode problems. 
 - [Contributing](#contributing)
 - [Contact](#contact)
 
+<!-- Problem Categories -->
+
 ## Problem Categories
 
 The problems are organized into the following categories based on their difficulty levels:
@@ -27,6 +27,8 @@ The problems are organized into the following categories based on their difficul
 
 Feel free to explore each category to find the solutions to specific problems you're interested in.
 
+<!-- How to Use -->
+
 ## How to Use
 
 1. Browse the [problem categories](#problem-categories) to find a specific difficulty level.
@@ -36,11 +38,15 @@ Feel free to explore each category to find the solutions to specific problems yo
    - A detailed explanation of the approach and solution.
    - Additional notes or optimizations, if applicable.
 
+<!-- Contributing -->
+
 ## Contributing
 
 I encourage contributions to this repository! If you have a different approach to solving a problem, feel free to open a pull request. Make sure to provide a clear explanation of your solution and any relevant details.
 
 If you're new to contributing, check out GitHub's guide on [How to Contribute to Open Source](https://opensource.guide/how-to-contribute/).
+
+<!-- Contact -->
 
 ## Contact
 
