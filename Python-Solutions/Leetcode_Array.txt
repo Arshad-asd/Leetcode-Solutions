@@ -38,3 +38,40 @@ Here's how the function works with the provided input `nums = [1, 3, 2]`:
 At the end of the loop, both `increasing` and `decreasing` are `False`, indicating that the list `[1, 3, 2]` is neither entirely non-increasing nor entirely non-decreasing. Therefore, the function correctly returns `False`, matching the expected output.
 
 <---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+QUESTION NO: 1. Two Sum
+
+
+```python
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        seen = {}
+        for i, num in enumerate(nums):
+            complement = target - num
+            if complement in seen:
+                return [seen[complement], i]
+            seen[num] = i
+        return []
+```
+
+This code defines a class `Solution` with a method `twoSum` that takes in a list of integers `nums` and an integer `target`, and returns a list of two indices from the input list `nums` such that the corresponding values at those indices sum up to the `target`. If no such indices are found, an empty list is returned.
+
+Now let's break down the code step by step:
+
+1. `seen = {}`: This initializes an empty dictionary `seen` which will be used to store the numbers encountered so far along with their corresponding indices.
+
+2. `for i, num in enumerate(nums):`: This loop iterates through each element in the `nums` list along with its index `i`. The `enumerate` function provides both the index and the value of the element in each iteration.
+
+3. `complement = target - num`: Here, the code calculates the complement of the current `num` by subtracting it from the `target`. The complement is the value that, when added to `num`, results in the `target` sum.
+
+4. `if complement in seen:`: This condition checks if the `complement` calculated in the previous step exists as a key in the `seen` dictionary. If it does, it means that the current `num` complements a number that was previously encountered in the list, and their sum equals the `target`.
+
+5. `return [seen[complement], i]`: If the condition in the previous step is true, the function immediately returns a list containing the indices of the two numbers that sum up to the `target`. The index of the complement (previously encountered number) is retrieved from the `seen` dictionary, and the index of the current `num` is also included in the list.
+
+6. `seen[num] = i`: If the condition in step 4 is not met, the current `num` is added to the `seen` dictionary with its index as the value. This allows the code to keep track of numbers encountered so far.
+
+7. `return []`: If the loop completes without finding a valid pair of indices that sum up to the `target`, the function returns an empty list to indicate that no such pair was found in the input list.
+
+In summary, this code uses a dictionary to keep track of the numbers encountered and their corresponding indices. It iterates through the input list, calculates the complement needed to reach the `target`, and checks if that complement has been encountered before. If so, it returns the indices of the two numbers that form the desired sum; otherwise, it continues iterating.
+
+<----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
