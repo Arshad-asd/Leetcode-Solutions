@@ -46,3 +46,52 @@ After processing all characters in the input string, we return the processed str
 
 Comparison and Returning Result:
 Finally, we compare the processed strings of both input strings s and t using the == operator. If the processed strings are equal, it means that both input strings are equivalent after backspace processing, and we return True. Otherwise, we return False.
+
+
+If you want to reverse a string while keeping only the alphabetical characters in their original positions and ignoring special characters, you can achieve this using a combination of loops and conditionals. Here's how you can do it:
+
+<---------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+                                                                 QUESTION :- 917. Reverse Only Letters
+
+
+```python
+def reverse_alphabet(input_string):
+    alphabet_chars = [char for char in input_string if char.isalpha()]
+    reversed_chars = []
+
+    for char in input_string:
+        if char.isalpha():
+            reversed_chars.append(alphabet_chars.pop())
+        else:
+            reversed_chars.append(char)
+
+    return ''.join(reversed_chars)
+
+original_string = "H!el@lo, W#orld!"
+reversed_string = reverse_alphabet(original_string)
+print(reversed_string)  # Output: "d!lr@ow, W#olleH"
+```
+
+Here's how the code works:
+
+1. `alphabet_chars = [char for char in input_string if char.isalpha()]`: This line creates a list `alphabet_chars` containing only the alphabetical characters from the `input_string`.
+
+2. `reversed_chars = []`: This initializes an empty list `reversed_chars` where the characters of the reversed string will be stored.
+
+3. The first loop (`for char in input_string:`) iterates through each character in the `input_string`.
+
+4. `if char.isalpha():`: This conditional checks if the current character is alphabetical.
+
+   - If it is, `alphabet_chars.pop()` removes the last character from the `alphabet_chars` list and adds it to the `reversed_chars` list.
+
+   - If it's not, the current character is directly added to the `reversed_chars` list.
+
+5. After the loop, the `reversed_chars` list holds the characters of the reversed string, while keeping only the alphabetical characters in their original positions.
+
+6. `''.join(reversed_chars)` joins the characters in the `reversed_chars` list to form the final reversed string.
+
+7. The function returns the final reversed string.
+
+In the provided example, the input string `"H!el@lo, W#orld!"` is reversed while maintaining the positions of alphabetical characters. The special characters are not affected, and they remain in their original positions.
+
+<---------------------------------------------------------------------------------------------------------------------------------------------------------------------->
