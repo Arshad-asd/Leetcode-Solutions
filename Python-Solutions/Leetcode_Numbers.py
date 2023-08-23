@@ -1,4 +1,4 @@
-                                                    #LEETCODE ARAY QUESTIONS SOLVED
+                                                            #LEETCODE ARAY QUESTIONS SOLVED
 
 # QUESTIOIN NO : 9. Palindrome Number
 
