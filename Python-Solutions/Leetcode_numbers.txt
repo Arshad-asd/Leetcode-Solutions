@@ -1,8 +1,69 @@
 
-<---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<---------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 
 # QUESTIOIN NO : 9. Palindrome Number
+class Solution:
+    def isPalindrome(self, x: int) -> bool:
+        if x < 0:
+            return False
+        
+        num, temp = 0, x
+        
+        while temp != 0:
+            num = num * 10 + temp % 10
+            temp //= 10
+        
+        return num == x
 
 
 
-<---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+Let's break down the code step by step:
+
+1. **Defining the Class and Method:**
+   
+    ```python
+    class Solution:
+        def isPalindrome(self, x: int) -> bool:
+    ```
+
+    Here, a class named `Solution` is defined with a method `isPalindrome`. The method takes an integer `x` as its input parameter and returns a boolean value indicating whether `x` is a palindrome or not.
+
+2. **Checking for Negative Numbers:**
+
+    ```python
+    if x < 0:
+        return False
+    ```
+   
+    The method starts by checking if the input integer `x` is negative. If `x` is negative, it's impossible for a negative number to be a palindrome, so the method immediately returns `False`.
+
+3. **Palindrome Check Algorithm:**
+
+    ```python
+    num, temp = 0, x
+    
+    while temp != 0:
+        num = num * 10 + temp % 10
+        temp //= 10
+    ```
+   
+    If the input integer `x` is non-negative, the method proceeds to check whether it's a palindrome. This is done by reversing the digits of `x` and comparing the reversed number with the original `x`.
+
+    - Two variables, `num` and `temp`, are initialized to 0 and `x`, respectively. `num` will store the reversed number, and `temp` will be used for calculations.
+    - In the `while` loop, the code iterates until `temp` becomes 0. In each iteration:
+        - The last digit of `temp` (obtained using `temp % 10`) is added to the reversed number `num` after shifting the existing digits to the left (multiplied by 10).
+        - The last digit is removed from `temp` by performing an integer division (`temp //= 10`).
+   
+    This loop effectively reverses the digits of the original number `x` and stores the reversed number in `num`.
+
+4. **Palindrome Comparison:**
+
+    ```python
+    return num == x
+    ```
+   
+    After the loop, the reversed number is stored in `num`. Now, the method compares `num` with the original number `x`. If they are equal, it means that the input integer `x` is a palindrome, and the method returns `True`. If they are not equal, `x` is not a palindrome, and the method returns `False`.
+
+In summary, the given code defines a class with a method to determine whether a given non-negative integer is a palindrome by reversing its digits and comparing the reversed number with the original number.
+
+<----------------------------------------------------------------------------------------------------------------------------------------------------------------------->
