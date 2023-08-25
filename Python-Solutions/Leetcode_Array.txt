@@ -75,3 +75,45 @@ Now let's break down the code step by step:
 In summary, this code uses a dictionary to keep track of the numbers encountered and their corresponding indices. It iterates through the input list, calculates the complement needed to reach the `target`, and checks if that complement has been encountered before. If so, it returns the indices of the two numbers that form the desired sum; otherwise, it continues iterating.
 
 <----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+
+# QUESTION NO: 961. N-Repeated Element in Size 2N Array
+
+```python
+class Solution:
+    def repeatedNTimes(self, nums: List[int]) -> int:
+        count_map = {}  # This dictionary will store the counts of each element
+        n = len(nums)   # Total number of elements in the input list
+        target_count = n // 2  # The count we are looking for (N/2)
+```
+
+1. `class Solution:`: This defines a class named `Solution`. It's commonly used for encapsulating related functions.
+
+2. `def repeatedNTimes(self, nums: List[int]) -> int:`: This is a method within the `Solution` class named `repeatedNTimes`. It takes an input parameter `nums`, which is a list of integers, and it returns an integer.
+
+3. `count_map = {}`: This initializes an empty dictionary named `count_map`. This dictionary will be used to store the counts of each element in the `nums` list.
+
+4. `n = len(nums)`: This calculates the total number of elements in the input list `nums` and assigns it to the variable `n`.
+
+5. `target_count = n // 2`: This calculates the count we are looking for, which is half of the total number of elements in the list. This is because we are looking for the element that appears more than once, specifically more than `n/2` times.
+
+Now, let's continue with the code:
+
+```python
+        for num in nums:
+            count_map[num] = count_map.get(num, 0) + 1
+            if count_map[num] == target_count:
+                return num
+```
+
+6. `for num in nums:`: This initiates a loop that iterates over each element `num` in the input list `nums`.
+
+7. `count_map[num] = count_map.get(num, 0) + 1`: This line updates the `count_map` dictionary by incrementing the count of the current `num` by 1. If the `num` is not already a key in the dictionary, the `get` method returns 0 (the second argument) and then adds 1 to it.
+
+8. `if count_map[num] == target_count:`: This checks if the count of the current `num` is equal to the target count (N/2) that we calculated earlier.
+
+9. `return num`: If the count of the current `num` matches the target count, the function returns this `num` as the result. This means the element appears more than `n/2` times in the list and is the repeated element we are looking for.
+
+So, in summary, this code defines a method that takes a list of integers as input, maintains a dictionary to count the occurrences of each element, and returns the element that appears more than `n/2` times in the input list. This is achieved by looping through the input list, updating the count in the dictionary, and checking if the count reaches the target value.
+
+<----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->

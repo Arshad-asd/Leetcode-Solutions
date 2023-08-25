@@ -31,3 +31,19 @@ class Solution:
         return []
 
 '''--------------------------------------------------------------------------------------------'''
+
+# QUESTION NO: 961. N-Repeated Element in Size 2N Array
+
+class Solution:
+    def repeatedNTimes(self, nums: List[int]) -> int:
+        count_map = {}
+        n = len(nums)
+        target_count = n // 2
+        
+        for num in nums:
+            count_map[num] = count_map.get(num, 0) + 1
+            if count_map[num] == target_count:
+                return num
+
+
+'''--------------------------------------------------------------------------------------------'''
