@@ -1,4 +1,4 @@
-                                                    #LEETCODE ARAY QUESTIONS SOLVED
+                                                            #LEETCODE ARAY QUESTIONS SOLVED
 
 # QUESTIOIN NO : 9. Palindrome Number
 
@@ -15,6 +15,5 @@ class Solution:
             temp //= 10
         
         return num == x
-        
-obj = Solution()
-print(obj.isPalindrome(121))
+
+'''--------------------------------------------------------------------------------------------'''
