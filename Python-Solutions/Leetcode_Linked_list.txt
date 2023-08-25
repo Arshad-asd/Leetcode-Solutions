@@ -1,0 +1,66 @@
+
+                                                                 #LINKED LISTS QUESTIONS SOLVED
+<---------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+# QUESTION NO: 23. Merge k Sorted Lists
+
+```python
+class ListNode:
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
+```
+
+Here, you're defining the `ListNode` class which represents a node in a singly-linked list. Each node contains a `val` (value) and a `next` pointer to the next node in the list.
+
+```python
+class Solution:
+    def mergeKLists(self, lists: List[Optional[ListNode]]) -> Optional[ListNode]:
+        if not lists:
+            return None
+```
+
+In the `Solution` class, you're defining the `mergeKLists` method which takes a list of linked-lists (`lists`) as input. If the input list is empty (`not lists`), you return `None` because there are no linked-lists to merge.
+
+```python
+        interval = 1
+        while interval < len(lists):
+            for i in range(0, len(lists) - interval, interval * 2):
+                lists[i] = self.merge(lists[i], lists[i + interval])
+
+            interval *= 2
+
+        return lists[0]
+```
+
+In this part, you're implementing a bottom-up merge sort approach. The `interval` starts with 1 and doubles in each iteration. The outer loop controls the intervals, and the inner loop iterates through the lists with the specified interval to merge pairs of linked-lists.
+
+Inside the inner loop, you're using the `merge` method to merge two linked-lists `lists[i]` and `lists[i + interval]`. The merged result is stored in `lists[i]`.
+
+The interval is doubled in each iteration until it reaches or exceeds the length of the `lists` array. Finally, the merged result is available at `lists[0]`, which is the fully merged linked-list.
+
+```python
+    def merge(self, l1, l2):
+        if not l1:
+            return l2
+        elif not l2:
+            return l1
+        else:
+            if l1.val <= l2.val:
+                l1.next = self.merge(l1.next, l2)
+                return l1
+            else:
+                l2.next = self.merge(l1, l2.next)
+                return l2
+```
+
+The `merge` method is a recursive function that merges two linked-lists `l1` and `l2` while maintaining the sorting order. If either `l1` or `l2` is `None`, you simply return the other list because there's nothing to merge.
+
+If both lists have elements, you compare their values. If `l1.val` is less than or equal to `l2.val`, you attach `l1` to the merged list and recursively merge `l1.next` with `l2`.
+
+If `l1.val` is greater than `l2.val`, you attach `l2` to the merged list and recursively merge `l1` with `l2.next`.
+
+The recursive approach ensures that elements are merged in the correct order, resulting in a single sorted linked-list.
+
+Overall, this implementation efficiently merges k sorted linked-lists using the merge sort algorithm. The `merge` method recursively combines two sorted lists, and the `mergeKLists` method applies the bottom-up merge sort technique to merge all k linked-lists.
+
+<---------------------------------------------------------------------------------------------------------------------------------------------------------------------->
