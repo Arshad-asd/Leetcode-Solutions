@@ -34,3 +34,17 @@ class Solution:
                 l2.next = self.merge(l1,l2.next)
                 return l2
 '''--------------------------------------------------------------------------------------------'''
+
+# QUESTION NO: 237. Delete Node in a Linked List
+class ListNode:
+    def __init__(self, x):
+        self.val = x
+        self.next = None
+
+class Solution:
+    def deleteNode(self, node):
+        node.val = node.next.val
+        node.next = node.next.next
+        return 
+
+'''--------------------------------------------------------------------------------------------'''
