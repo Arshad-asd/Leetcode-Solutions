@@ -64,3 +64,19 @@ The recursive approach ensures that elements are merged in the correct order, re
 Overall, this implementation efficiently merges k sorted linked-lists using the merge sort algorithm. The `merge` method recursively combines two sorted lists, and the `mergeKLists` method applies the bottom-up merge sort technique to merge all k linked-lists.
 
 <---------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+# QUESTION NO: 237. Delete Node in a Linked List
+
+```python
+class Solution:
+    def deleteNode(self, node):
+        node.val = node.next.val  # Copy the value of the next node to the current node
+        node.next = node.next.next  # Update the next pointer to skip the next node
+        return
+```
+
+When you want to delete a node from the linked list, you copy the value of the next node to the current node and then adjust the next pointer to skip the next node. This effectively removes the node from the list while maintaining the correct linkage between the surrounding nodes.
+
+Your implementation follows this logic and should work as expected to delete a node in a singly-linked list.
+
+<---------------------------------------------------------------------------------------------------------------------------------------------------------------------->
