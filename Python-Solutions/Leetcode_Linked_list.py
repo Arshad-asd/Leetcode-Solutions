@@ -48,3 +48,25 @@ class Solution:
         return 
 
 '''--------------------------------------------------------------------------------------------'''
+
+# QUESTION NO: 203. Remove Linked List Elements
+
+class ListNode:
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
+class Solution:
+    def removeElements(self, head: Optional[ListNode], val: int) -> Optional[ListNode]:
+        node = ListNode(next=head)
+        prev, curr = node, head
+
+        while curr:
+            nxt = curr.next
+            if curr.val == val:
+                prev.next = nxt
+            else:
+                prev = curr
+            curr = nxt
+        return node.next
+
+'''--------------------------------------------------------------------------------------------'''
