@@ -80,3 +80,51 @@ When you want to delete a node from the linked list, you copy the value of the n
 Your implementation follows this logic and should work as expected to delete a node in a singly-linked list.
 
 <---------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+# QUESTION NO: 203. Remove Linked List Elements
+
+```python
+class ListNode:
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
+```
+
+- This code defines a simple `ListNode` class representing a node in a singly-linked list. Each node has two attributes: `val` to store the value of the node, and `next` to point to the next node in the list.
+
+```python
+class Solution:
+    def removeElements(self, head: Optional[ListNode], val: int) -> Optional[ListNode]:
+        node = ListNode(next=head)
+        prev, curr = node, head
+```
+
+- Here, we define a class `Solution` with a method `removeElements`. The method takes in the head of the linked list (`head`) and the value to be removed (`val`) as input parameters.
+- A new node called `node` is created with its `next` pointing to the original `head` of the linked list. This is done to handle the edge case of removing the head node itself if it has the target value.
+- Two pointers, `prev` and `curr`, are initialized. `prev` will be used to keep track of the previous node, and `curr` will traverse through the list.
+
+```python
+        while curr:
+            nxt = curr.next
+            if curr.val == val:
+                prev.next = nxt
+            else:
+                prev = curr
+            curr = nxt
+```
+
+- This is a loop that iterates through the linked list.
+- `nxt` is assigned the reference to the next node of `curr`.
+- If the value of the current node (`curr.val`) is equal to the target value (`val`), it means the current node needs to be removed. In this case, `prev.next` is updated to point to the next node (`nxt`), effectively skipping the current node.
+- If the value of the current node is not equal to the target value, it means the node is not to be removed. In this case, `prev` is updated to `curr`, effectively moving `prev` forward in the list.
+
+```python
+        return node.next
+```
+
+- After the loop, the `node` points to the dummy node we created at the beginning. `node.next` points to the modified linked list without the nodes having the target value.
+- So, we return `node.next`, which is the new head of the modified linked list.
+
+This implementation correctly removes all nodes with the target value while maintaining the structure of the linked list. It does this by using two pointers (`prev` and `curr`) to adjust the `next` pointers of nodes that need to be removed.
+
+<---------------------------------------------------------------------------------------------------------------------------------------------------------------------->
