@@ -1,0 +1,64 @@
+                                                     # BINARY TREE LEETCODE SOLUTIONS
+
+<---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+# QUESTION NO: 257. Binary Tree Paths
+
+```python
+class TreeNode:
+    def __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
+```
+
+- This code defines a simple `TreeNode` class representing a node in a binary tree. Each node has three attributes: `val` to store the value of the node, `left` to point to the left child node, and `right` to point to the right child node.
+
+```python
+class Solution:
+    def binaryTreePaths(self, root: Optional[TreeNode]) -> List[str]:
+        result = []
+```
+
+- Here, we define a class `Solution` with a method `binaryTreePaths`. The method takes in the root of a binary tree (`root`) as an input parameter and returns a list of strings representing all paths from the root to the leaf nodes in the tree.
+- A list named `result` is initialized to store the paths.
+
+```python
+        def travers(root, path):
+            if not root:
+                return []
+```
+
+- This is a recursive function named `travers`. It takes two parameters: `root`, which is the current node being considered, and `path`, which represents the path from the root to the current node.
+
+- The first base case checks if `root` is `None`, which means there's no node here. In that case, the function returns an empty list.
+
+```python
+            if not(root.left or root.right):
+                return result.append(path + str(root.val))
+```
+
+- The next base case checks if the current node has no left or right child. This indicates that the current node is a leaf node. In this case, the current path (`path`) appended with the value of the leaf node is added to the `result` list.
+
+```python
+            if root.left:
+                travers(root.left, path + str(root.val) + "->")
+            if root.right:
+                travers(root.right, path + str(root.val) + "->")
+```
+
+- These lines are the recursive steps. If the current node has a left child, the `travers` function is called recursively with the left child and an updated path that includes the current node's value.
+- Similarly, if the current node has a right child, the `travers` function is called recursively with the right child and an updated path.
+
+```python
+        travers(root, "")
+        return result
+```
+
+- Finally, the `travers` function is called initially with the root node and an empty path.
+- After the recursive calls, the `result` list will contain all the paths from the root to the leaf nodes.
+- The list of paths is returned as the final result.
+
+The implementation is using a depth-first search approach to traverse the binary tree and construct the paths while recursively moving from the root to the leaf nodes.
+
+<---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
