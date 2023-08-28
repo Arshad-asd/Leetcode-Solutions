@@ -71,3 +71,71 @@ class Trie:
 
 
 <---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+# QUESTION NO: 211. Design Add and Search Words Data Structure
+
+
+```python
+class TrieNode:
+    def __init__(self):
+        self.children = {}
+        self.word = False
+```
+
+- The `TrieNode` class is similar to the previous explanation. Each node has a dictionary called `children` that maps characters to child nodes. Additionally, there's a `word` attribute that indicates whether a complete word ends at this node.
+
+```python
+class WordDictionary:
+
+    def __init__(self):
+        self.root = TrieNode()
+```
+
+- The `WordDictionary` class represents the dictionary structure that uses the Trie for efficient word storage.
+- It has a constructor `__init__` that initializes the root node of the Trie.
+
+```python
+    def addWord(self, word: str) -> None:
+        cur = self.root
+
+        for c in word:
+            if c not in cur.children:
+                cur.children[c] = TrieNode()
+            cur = cur.children[c]
+        cur.word = True
+```
+
+- The `addWord` method is used to insert a word into the dictionary.
+- It follows the same Trie insertion logic as before. For each character in the word, it traverses down the Trie, creating new nodes if necessary.
+- After inserting all characters, the `word` attribute of the last node is set to `True`, marking the end of the inserted word.
+
+```python
+    def search(self, word: str) -> bool:
+        def dfs(j, root):
+            cur = root
+
+            for i in range(j, len(word)):
+                c = word[i]
+                if c == ".":
+                    for child in cur.children.values():
+                        if dfs(i + 1, child):
+                            return True
+                    return False
+                else:
+                    if c not in cur.children:
+                        return False
+                    cur = cur.children[c]
+            return cur.word
+        
+        return dfs(0, self.root)
+```
+
+- The `search` method is used to search for words in the dictionary, including wildcard searches where `'.'` can represent any character.
+- It uses a depth-first search (`dfs`) approach to traverse the Trie and perform searches.
+- The `dfs` function is defined within the `search` method. It takes two parameters: `j`, which represents the current index of the word being searched, and `root`, which is the current node in the Trie.
+- The loop iterates through the characters starting from index `j`. If the character is `'.'`, it recursively explores all child nodes using a loop, effectively covering all possible characters.
+- If the character is not `'.'`, it checks if the character is in the current node's children. If not, the search fails. Otherwise, it continues traversing the Trie.
+- The search is successful if the traversal reaches the end of the word (reaches the last character) and the `word` attribute of the last node is `True`.
+
+
+<---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
