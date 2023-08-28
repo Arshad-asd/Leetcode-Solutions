@@ -5,5 +5,69 @@
 208. Implement Trie (Prefix Tree)
 
 
+```python
+class TrieNode:
+    def __init__(self):
+        self.children = {}
+        self.endOfword = False
+```
+
+- The `TrieNode` class represents a node in the Trie. Each node has a dictionary called `children`, where keys are characters and values are references to the child nodes. The `endOfword` attribute is a boolean that indicates whether a word ends at this node.
+
+```python
+class Trie:
+
+    def __init__(self):
+        self.root = TrieNode()
+```
+
+- The `Trie` class represents the Trie data structure. It has a constructor `__init__` that initializes the root node of the Trie.
+
+```python
+    def insert(self, word: str) -> None:
+        cur = self.root
+
+        for c in word:
+            if c not in cur.children:
+                cur.children[c] = TrieNode()
+            cur = cur.children[c]
+        cur.endOfword = True
+```
+
+- The `insert` method is used to insert a word into the Trie.
+- Starting from the root node, for each character `c` in the word, it checks if `c` is already a child of the current node `cur`. If not, a new node is created and added as a child of `cur`.
+- The traversal continues down the Trie for each character in the word, ensuring that the Trie structure represents the inserted word.
+- After inserting all characters, the `endOfword` attribute of the last node is set to `True` to mark the end of the inserted word.
+
+```python
+    def search(self, word: str) -> bool:
+        cur = self.root
+
+        for c in word:
+            if c not in cur.children:
+                return False
+            cur = cur.children[c]
+        return cur.endOfword
+```
+
+- The `search` method is used to check if a word exists in the Trie.
+- Starting from the root node, for each character `c` in the word, it checks if `c` is a child of the current node `cur`. If not, the word is not in the Trie, and the method returns `False`.
+- If the traversal reaches the last character of the word, it checks if the `endOfword` attribute of the last node is `True`, indicating that the word exists in the Trie.
+
+```python
+    def startsWith(self, prefix: str) -> bool:
+        cur = self.root
+
+        for c in prefix:
+            if c not in cur.children:
+                return False
+            cur = cur.children[c]
+        return True
+```
+
+- The `startsWith` method checks if any word in the Trie starts with a given prefix.
+- Similar to the `search` method, it traverses down the Trie for each character in the prefix.
+- If the traversal completes, it means the Trie contains words that start with the given prefix, so the method returns `True`.
+
 
 <---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
