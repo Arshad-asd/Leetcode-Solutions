@@ -23,3 +23,5 @@ class Solution:
                 travers(root.right,path+str(root.val)+"->")
         travers(root,"")
         return result
+
+'''--------------------------------------------------------------------------------------------'''
