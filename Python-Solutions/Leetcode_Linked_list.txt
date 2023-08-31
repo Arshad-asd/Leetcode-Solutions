@@ -128,3 +128,6 @@ class Solution:
 This implementation correctly removes all nodes with the target value while maintaining the structure of the linked list. It does this by using two pointers (`prev` and `curr`) to adjust the `next` pointers of nodes that need to be removed.
 
 <---------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+
+# QUESTION NO: 2. Add Two Numbers
