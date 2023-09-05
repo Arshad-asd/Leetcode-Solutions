@@ -64,6 +64,76 @@ Let's break down the code step by step:
    
     After the loop, the reversed number is stored in `num`. Now, the method compares `num` with the original number `x`. If they are equal, it means that the input integer `x` is a palindrome, and the method returns `True`. If they are not equal, `x` is not a palindrome, and the method returns `False`.
 
-In summary, the given code defines a class with a method to determine whether a given non-negative integer is a palindrome by reversing its digits and comparing the reversed number with the original number.
+
+<----------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+
+
+# QUESTIOIN NO : 326. Power of Three
+
+#Mehthods 1:
+
+```python
+class Solution:
+    def isPowerOfThree(self, n: int) -> bool:
+```
+
+This code defines a class named `Solution` with a method called `isPowerOfThree`. The method takes an integer `n` as an argument and returns a boolean value (`True` or `False`). The goal is to determine whether the given number `n` is a power of three.
+
+```python
+        if n <= 0:
+            return False
+```
+
+This line checks if `n` is less than or equal to 0. If `n` is not a positive integer (i.e., it's zero or negative), the function returns `False` because only positive integers can be powers of three. If `n` is greater than 0, the code proceeds.
+
+```python
+        while n % 3 == 0:
+            n //= 3
+```
+
+This part of the code enters a `while` loop. It continues as long as `n` is divisible by 3 without leaving a remainder. In other words, it keeps dividing `n` by 3 until it's no longer divisible by 3. This is a crucial step in determining if `n` is a power of three. If `n` is a power of three, it can be fully divided by 3 multiple times until it reaches 1.
+
+```python
+        return n == 1
+```
+
+After the `while` loop, the code checks if the final value of `n` is equal to 1. If `n` was originally a power of three, this condition will be `True` because it means `n` has been fully divided by 3 and reduced to 1. In this case, the function returns `True`, indicating that the input number is indeed a power of three. If `n` is not a power of three, the final value of `n` will not be 1, and the function returns `False`.
+
+In summary, this code uses a loop to repeatedly divide the input number `n` by 3 until it's no longer divisible, and then checks if the final result is equal to 1. If it is, the function returns `True`, indicating that `n` is a power of three; otherwise, it returns `False`.
+
+#Mehthods 2:
+
+Certainly, let's break down the code step by step:
+
+```python
+import math
+
+class Solution:
+    def isPowerOfThree(self, n: int) -> bool:
+```
+
+This code imports the `math` module and defines a class named `Solution` with a method called `isPowerOfThree`. The method takes an integer `n` as an argument and returns a boolean value (`True` or `False`). The goal is to determine whether the given number `n` is a power of three.
+
+```python
+        if n <= 0:
+            return False
+```
+
+This line checks if `n` is less than or equal to 0. If `n` is not a positive integer (i.e., it's zero or negative), the function returns `False` because only positive integers can be powers of three. If `n` is greater than 0, the code proceeds.
+
+```python
+        power = int(round(math.log(n, 3)))
+```
+
+In this line, the code calculates the logarithm of `n` with base 3 using the `math.log` function. This operation essentially finds the exponent to which 3 must be raised to get `n`. The result is a floating-point number, but it's converted to an integer using `int(round(...))` to ensure it's an integer value.
+
+```python
+        return 3 ** power == n
+```
+
+Finally, the code checks if 3 raised to the power of `power` (calculated earlier) is equal to the original number `n`. If they are equal, the function returns `True`, indicating that `n` is indeed a power of three. If they are not equal, the function returns `False`.
+
+In summary, this code uses the logarithm to calculate the exponent to which 3 must be raised to get `n`, and then checks if 3 raised to that exponent equals `n`. If they are equal, it returns `True`, indicating that `n` is a power of three; otherwise, it returns `False`.
 
 <----------------------------------------------------------------------------------------------------------------------------------------------------------------------->
