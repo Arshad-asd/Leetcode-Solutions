@@ -18,3 +18,27 @@ class Solution:
         return num == x
 
 '''--------------------------------------------------------------------------------------------'''
+
+# QUESTIOIN NO : 326. Power of Three
+
+#Mehthods 1:
+
+class Solution:
+    def isPowerOfThree(self, n: int) -> bool:
+        if n <= 0:
+            return False
+        while n % 3 == 0:
+            n //=3
+        return n==1
+
+#Mehthods 2:
+
+class Solution:
+    def isPowerOfThree(self, n: int) -> bool:
+        if n <= 0:
+            return False
+        power = int(round(math.log(n,3)))
+        return 3**power == n
+    
+'''--------------------------------------------------------------------------------------------'''
+
