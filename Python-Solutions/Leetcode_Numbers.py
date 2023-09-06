@@ -44,6 +44,8 @@ class Solution:
 
 # 1103. Distribute Candies to People
 
+# Mehtods 1:
+
 class Solution:
     def distributeCandies(self, candies: int, num_people: int) -> List[int]:
         arr = [ 0 for i in range(num_people)]
@@ -62,4 +64,19 @@ class Solution:
             i += 1
         return arr
 
+# Methods 2:
+
+class Solution:
+    def distributeCandies(self, candies: int, num_people: int) -> List[int]:
+        result = [0] * num_people
+        i = 0
+        give = 1
+        while candies > 0:
+                candies_given = min(give, candies)
+                result[i] += candies_given
+                candies -=  candies_given
+                i = (i +1) % num_people
+                give +=1
+        return result
+       
 '''--------------------------------------------------------------------------------------------'''
