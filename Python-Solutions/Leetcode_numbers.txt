@@ -137,3 +137,136 @@ Finally, the code checks if 3 raised to the power of `power` (calculated earlier
 In summary, this code uses the logarithm to calculate the exponent to which 3 must be raised to get `n`, and then checks if 3 raised to that exponent equals `n`. If they are equal, it returns `True`, indicating that `n` is a power of three; otherwise, it returns `False`.
 
 <----------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+
+
+# 1103. Distribute Candies to People
+
+# Mehtods 1:
+
+```python
+class Solution:
+    def distributeCandies(self, candies: int, num_people: int) -> List[int]:
+```
+
+This code defines a class `Solution` with a method `distributeCandies` that takes two parameters: `candies`, representing the total number of candies to be distributed, and `num_people`, representing the number of people (recipients). The method returns a list of integers representing the distribution of candies among the people.
+
+```python
+        arr = [0 for i in range(num_people)]
+```
+
+Here, an array `arr` is initialized with `num_people` elements, all set to 0. This array will be used to store the distribution of candies among the people.
+
+```python
+        i = 0
+        j = 1
+```
+
+Two variables, `i` and `j`, are initialized. `i` represents the index of the current person (starting at 0), and `j` represents the number of candies to be given to the current person (starting at 1).
+
+```python
+        while candies > 0:
+```
+
+This `while` loop continues as long as there are still candies to distribute.
+
+```python
+            if i == len(arr):
+                i = 0
+```
+
+This conditional statement checks if the index `i` has reached the end of the `arr` array. If it has, it resets `i` to 0, ensuring that the distribution continues in a circular fashion among the people.
+
+```python
+            if candies >= j:
+                arr[i] += j
+                candies -= j
+                j += 1
+            else:
+                arr[i] += candies
+                break
+```
+
+Inside the loop, there are two conditional branches:
+- If there are enough candies (`candies >= j`), it adds `j` candies to the `i`-th person's distribution in `arr`, subtracts `j` from `candies`, and increments `j` by 1. This simulates the distribution process described in the problem statement.
+- If there are fewer candies than `j`, it adds the remaining `candies` to the `i`-th person's distribution and breaks out of the loop, indicating that all candies have been distributed.
+
+```python
+            i += 1
+```
+
+After distributing candies to the current person, `i` is incremented to move to the next person in a circular manner.
+
+```python
+        return arr
+```
+
+Finally, when all the candies have been distributed, the method returns the `arr` array, which contains the final distribution of candies among the people.
+
+
+
+# Mehtods 2:
+```python
+def distributeCandies(candies, num_people):
+```
+
+This line defines a Python function named `distributeCandies` that takes two parameters: `candies`, representing the total number of candies to be distributed, and `num_people`, representing the number of people (recipients).
+
+```python
+    result = [0] * num_people
+```
+
+Here, we initialize a list called `result` with `num_people` elements, all initialized to 0. This list will be used to store the distribution of candies among the people.
+
+```python
+    i = 0
+    give = 1
+```
+
+We initialize two variables, `i` and `give`. `i` represents the index of the current person (starting with the first person at index 0), and `give` represents the number of candies to give to the current person (starting with 1).
+
+```python
+    while candies > 0:
+```
+
+This starts a `while` loop that continues as long as there are still candies to distribute.
+
+```python
+        candies_given = min(give, candies)
+```
+
+In each iteration of the loop, we calculate the number of candies to give to the current person (`candies_given`). We use `min(give, candies)` to ensure that we don't give more candies than are available.
+
+```python
+        result[i] += candies_given
+```
+
+We add the `candies_given` to the `i`-th person's distribution in the `result` list. This represents giving candies to the current person.
+
+```python
+        candies -= candies_given
+```
+
+We subtract the `candies_given` from the total `candies` to keep track of how many candies are left to distribute.
+
+```python
+        i = (i + 1) % num_people
+```
+
+We update the `i` variable to move to the next person in a circular fashion. The `%` operator ensures that `i` wraps around to 0 when it reaches `num_people`.
+
+```python
+        give += 1
+```
+
+We increment the `give` variable to prepare for the next iteration, where we will give one more candy than in the previous iteration.
+
+```python
+    return result
+```
+
+Finally, when all the candies have been distributed, we return the `result` list, which contains the final distribution of candies among the people.
+
+The code simulates the described distribution process, and the result is an array representing how many candies each person received in the end.
+
+<----------------------------------------------------------------------------------------------------------------------------------------------------------------------->
