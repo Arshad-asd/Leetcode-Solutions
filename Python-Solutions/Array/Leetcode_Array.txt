@@ -155,3 +155,39 @@ print(result)  # Output: 1
 
 This solution follows the approach explained earlier, where it calculates a unique identifier for each domino pair and uses a dictionary to keep track of their frequencies. It then calculates the number of equivalent pairs for each unique identifier and sums them up to get the total number of equivalent pairs in the given list of dominoes.
 <----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+# QUESTION NO: 27. Remove Element
+
+```python
+def removeElement(nums, val):
+    i = 0  # Initialize the first pointer
+    j = 0  # Initialize the second pointer
+
+    while j < len(nums):
+        if nums[j] != val:
+            nums[i] = nums[j]
+            i += 1
+        j += 1
+
+    return i
+```
+
+1. **Function Definition**: The function `removeElement` takes two parameters: `nums`, which is the list of integers to be modified, and `val`, which is the value to be removed from the list.
+
+2. **Initialization**: Two pointers, `i` and `j`, are initialized to 0. These pointers will be used to keep track of positions in the `nums` list.
+
+3. **While Loop**: The main part of the algorithm is inside a `while` loop, which iterates through the `nums` list using the `j` pointer.
+
+4. **Comparison**: Inside the loop, there is an `if` statement that checks whether the value at `nums[j]` is not equal to the target value `val`.
+
+5. **Value Copy**: If `nums[j]` is not equal to `val`, it means this element is not to be removed. In this case, the value at `nums[j]` is copied to the position pointed to by `i`, which effectively removes `val` from the list. `i` is then incremented to point to the next available position in the modified list.
+
+6. **Pointer Movement**: Regardless of whether the element is removed or not, the `j` pointer is incremented to continue checking the next element in the original list.
+
+7. **Termination Condition**: The loop continues until `j` reaches the end of the `nums` list.
+
+8. **Result**: After the loop, the function returns the value of `i`. This represents the number of elements in the modified `nums` list that are not equal to `val`. This effectively trims the `nums` list, removing all occurrences of `val`.
+
+The algorithm uses two pointers to traverse the list efficiently, and it performs the removal of elements in-place. As a result, the `nums` list will contain only the elements that are not equal to `val`, and the return value is the count of such elements.
+
+<----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
