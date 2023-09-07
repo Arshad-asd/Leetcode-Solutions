@@ -117,3 +117,41 @@ Now, let's continue with the code:
 So, in summary, this code defines a method that takes a list of integers as input, maintains a dictionary to count the occurrences of each element, and returns the element that appears more than `n/2` times in the input list. This is achieved by looping through the input list, updating the count in the dictionary, and checking if the count reaches the target value.
 
 <----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+# QUESTION NO: 1128. Number of Equivalent Domino Pairs
+
+
+```python
+def numEquivalentDominoPairs(dominoes):
+    # Initialize a dictionary to store the frequency of unique domino configurations
+    domino_counts = {}
+    
+    # Initialize a variable to keep track of the total number of equivalent pairs
+    total_pairs = 0
+    
+    # Iterate through the dominoes
+    for domino in dominoes:
+        # Ensure that the smaller value is first
+        domino.sort()
+        
+        # Calculate a unique identifier for the domino pair
+        identifier = tuple(domino)
+        
+        # Update the count for this identifier in the dictionary
+        domino_counts[identifier] = domino_counts.get(identifier, 0) + 1
+        
+    # Iterate through the dictionary and calculate pairs for each unique identifier
+    for count in domino_counts.values():
+        if count > 1:
+            total_pairs += (count * (count - 1)) // 2
+    
+    return total_pairs
+
+# Example usage:
+dominoes = [[1, 2], [2, 1], [3, 4], [5, 6]]
+result = numEquivalentDominoPairs(dominoes)
+print(result)  # Output: 1
+```
+
+This solution follows the approach explained earlier, where it calculates a unique identifier for each domino pair and uses a dictionary to keep track of their frequencies. It then calculates the number of equivalent pairs for each unique identifier and sums them up to get the total number of equivalent pairs in the given list of dominoes.
+<----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
