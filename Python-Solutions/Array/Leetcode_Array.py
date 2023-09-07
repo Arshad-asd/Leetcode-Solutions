@@ -46,3 +46,19 @@ class Solution:
 
 
 '''--------------------------------------------------------------------------------------------'''
+
+# QUESTION NO: 1128. Number of Equivalent Domino Pairs
+
+class Solution:
+    def numEquivDominoPairs(self, dominoes: List[List[int]]) -> int:
+        domino_counts = {}
+        total_pairs = 0
+        for domino in dominoes:
+            domino.sort()
+            identifier = tuple(domino)
+            domino_counts[identifier] = domino_counts.get(identifier,0) + 1
+        for count in domino_counts.values():
+            total_pairs += (count * (count -1)) // 2
+        return total_pairs
+
+'''--------------------------------------------------------------------------------------------'''
