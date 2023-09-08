@@ -129,5 +129,39 @@ This implementation correctly removes all nodes with the target value while main
 
 <---------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 
+# QUESTION NO: 21. Merge Two Sorted Lists
 
-# QUESTION NO: 2. Add Two Numbers
+
+1. **Class Definition (`ListNode`)**:
+   - `class ListNode:` defines a simple class for creating linked list nodes.
+   - The `__init__` method initializes each node with a value (`val`) and a reference to the next node (`next`). By default, if `val` or `next` is not provided, they are set to `0` and `None`, respectively.
+
+2. **Class Definition (`Solution`)**:
+   - `class Solution:` defines a class that contains the `mergeTwoLists` method to merge two sorted linked lists.
+   - This class is structured to follow a common pattern for solving problems in LeetCode and other coding platforms.
+
+3. **`mergeTwoLists` Method Parameters**:
+   - `self`: The `self` parameter is a reference to the instance of the `Solution` class.
+   - `list1: Optional[ListNode]` and `list2: Optional[ListNode]` are the two input linked lists to be merged. They are of type `Optional[ListNode]`, which means they can be either a valid linked list or `None`.
+
+4. **Initialization**:
+   - `dummy = ListNode()`: A `dummy` node is created to simplify the code. It acts as a placeholder at the beginning of the merged list.
+   - `tail = dummy`: The `tail` pointer is initially set to the `dummy` node. It will be used to keep track of the last node in the merged list.
+
+5. **Merging the Lists (While Loop)**:
+   - The `while` loop iterates as long as both `list1` and `list2` are not `None`.
+   - Inside the loop, it compares the values of the current nodes pointed to by `list1` and `list2`.
+   - If `list1` has a smaller value, the node from `list1` is appended to the merged list (`tail.next = list1`), and `list1` is moved to its next node (`list1 = list1.next`).
+   - If `list2` has a smaller or equal value, the node from `list2` is appended to the merged list (`tail.next = list2`), and `list2` is moved to its next node (`list2 = list2.next`).
+   - In either case, the `tail` pointer is updated to the newly added node (`tail = tail.next`).
+
+6. **Appending Remaining Nodes**:
+   - After the loop, either `list1` or `list2` may still have remaining nodes. If `list1` is not `None`, the remaining nodes from `list1` are appended to the merged list.
+   - If `list2` is not `None`, the remaining nodes from `list2` are appended to the merged list.
+
+7. **Returning the Merged List**:
+   - The merged list is returned as `dummy.next`. `dummy` was used to simplify the initial creation of the list, so `dummy.next` is the actual head of the merged list.
+
+This code efficiently merges two sorted linked lists in a way that preserves the order of the elements while using a constant amount of extra space. It's a common technique used in various programming scenarios involving linked lists.
+
+<---------------------------------------------------------------------------------------------------------------------------------------------------------------------->
