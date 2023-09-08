@@ -78,3 +78,25 @@ class Solution:
             j +=1
         return i
 '''--------------------------------------------------------------------------------------------'''
+
+# QUESTION NO: 118. Pascal's Triangle
+
+class Solution:
+    def generate(self, numRows: int) -> List[List[int]]:
+        if numRows == 1:
+            return [[1]]
+        elif numRows == 2:
+            return [[1],[1,1]]
+        else:
+            lists = [[1],[1,1]]
+            for i in range(2,numRows):
+                temp = []
+                for j in range(0,i+1):
+                      if j==0 or j==i:
+                        temp.append(1)
+                      else:
+                        temp.append(lists[i-1][j-1]+lists[i-1][j])
+                lists.append(temp)
+            return lists
+
+'''--------------------------------------------------------------------------------------------'''
