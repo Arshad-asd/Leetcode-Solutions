@@ -191,3 +191,41 @@ def removeElement(nums, val):
 The algorithm uses two pointers to traverse the list efficiently, and it performs the removal of elements in-place. As a result, the `nums` list will contain only the elements that are not equal to `val`, and the return value is the count of such elements.
 
 <----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+# QUESTION NO: 118. Pascal's Triangle
+
+
+1. **Method Definition**:
+   - `class Solution:` defines a class `Solution` to encapsulate the solution to the problem.
+   - `def generate(self, numRows: int) -> List[List[int]]:` defines a method `generate` that takes an integer `numRows` as input and returns a list of lists of integers.
+
+2. **Handling Special Cases (Rows 1 and 2)**:
+   - The code begins by checking if `numRows` is equal to 1 or 2. If so, it directly returns the corresponding patterns for the first two rows of Pascal's Triangle as nested lists.
+
+3. **Initialization of `lists`**:
+   - A list `lists` is initialized with the first two rows of Pascal's Triangle (`[[1], [1, 1]]`) since these two rows are the base cases.
+
+4. **Loop for Generating Rows**:
+   - The code enters an `else` block, indicating that it will handle cases beyond the first two rows.
+   - It then enters a `for` loop that iterates from `2` (the third row) up to `numRows - 1`, as the first two rows are already included.
+
+5. **Initialization of `temp`**:
+   - For each row being generated, an empty list `temp` is initialized. This list will hold the values for the current row.
+
+6. **Loop for Calculating Values in the Current Row**:
+   - Within the loop for generating the current row, there's another `for` loop that iterates from `0` to `i` (inclusive), where `i` represents the current row number.
+
+7. **Calculation of Values**:
+   - Inside the inner loop, there's a conditional check:
+     - If `j` (the current position in the row) is either `0` or `i`, the value `1` is appended to `temp`. These are the edge values of Pascal's Triangle.
+     - Otherwise, the value at `temp[j]` is calculated as the sum of the values from the previous row, `lists[i - 1][j - 1]` and `lists[i - 1][j]`.
+
+8. **Appending the Row to `lists`**:
+   - Once the `temp` list is populated with values for the current row, it is appended to the `lists` list, representing the growing Pascal's Triangle.
+
+9. **Returning the Result**:
+   - After generating all rows up to `numRows`, the final result is the `lists` list, which contains Pascal's Triangle up to the specified number of rows.
+
+The code efficiently generates Pascal's Triangle row by row and returns it as a list of lists, following the pattern of summing the values from the previous row to generate the current row.
+
+<----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
