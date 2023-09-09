@@ -231,3 +231,59 @@ The code efficiently generates Pascal's Triangle row by row and returns it as a 
 <----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 
 # QUESTION NO: 2215. Find the Difference of Two Arrays
+
+
+```python
+class Solution:
+    def findDifference(self, nums1: List[int], nums2: List[int]) -> List[List[int]]:
+```
+
+1. **Class Definition and Method Signature**:
+   - The code defines a class called `Solution`.
+   - Inside this class, there's a method named `findDifference` that takes two lists of integers, `nums1` and `nums2`, as input.
+   - It returns a list containing two lists of integers, where the first list contains elements from `nums1` that are not in `nums2`, and the second list contains elements from `nums2` that are not in `nums1`.
+
+```python
+        nums1Set, nums2Set = set(nums1), set(nums2)
+```
+
+2. **Set Conversion**:
+   - The code converts the input lists `nums1` and `nums2` into sets, `nums1Set` and `nums2Set`. Sets are used to efficiently perform set operations like set difference and membership checks.
+
+```python
+        res1, res2 = set(), set()
+```
+
+3. **Initialization of Result Sets**:
+   - Two empty sets, `res1` and `res2`, are initialized. These sets will be used to store the elements that are not common between the two input lists.
+
+```python
+        for n in nums1:
+            if n not in nums2Set:
+                res1.add(n)
+```
+
+4. **Iteration Over `nums1`**:
+   - The code iterates through the elements of the `nums1` list using a `for` loop.
+   - For each element `n` in `nums1`, it checks whether `n` is not in the `nums2Set`.
+   - If `n` is not found in `nums2Set`, it means `n` is in `nums1` but not in `nums2`, so it is added to the `res1` set using `res1.add(n)`.
+
+```python
+        for n in nums2:
+            if n not in nums1Set:
+                res2.add(n)
+```
+
+5. **Iteration Over `nums2`**:
+   - Similarly, the code iterates through the elements of the `nums2` list using another `for` loop.
+   - For each element `n` in `nums2`, it checks whether `n` is not in the `nums1Set`.
+   - If `n` is not found in `nums1Set`, it means `n` is in `nums2` but not in `nums1`, so it is added to the `res2` set using `res2.add(n)`.
+
+```python
+        return [list(res1), list(res2)]
+```
+
+6. **Returning the Result**:
+   - Finally, the code returns a list containing the elements of `res1` and `res2` as lists. This is done using `[list(res1), list(res2)]`.
+
+<----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
