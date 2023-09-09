@@ -229,3 +229,5 @@ The algorithm uses two pointers to traverse the list efficiently, and it perform
 The code efficiently generates Pascal's Triangle row by row and returns it as a list of lists, following the pattern of summing the values from the previous row to generate the current row.
 
 <----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+# QUESTION NO: 2215. Find the Difference of Two Arrays
