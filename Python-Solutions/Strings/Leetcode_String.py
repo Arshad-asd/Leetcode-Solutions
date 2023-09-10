@@ -30,3 +30,17 @@ class Solution:
         return ''.join(reversed_chars)
 
 '''--------------------------------------------------------------------------------------------------------------------------------------'''
+
+#QUESTION NUMBER : 2810. Faulty Keyboard
+
+class Solution:
+    def finalString(self, s: str) -> str:
+       rev_str = ""
+       for i in range(len(s)):
+           if s[i] == "i":
+               rev_str = rev_str[:i][::-1]
+           else:
+               rev_str += s[i]
+       return rev_str
+
+'''--------------------------------------------------------------------------------------------------------------------------------------'''
