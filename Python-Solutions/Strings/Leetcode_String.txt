@@ -95,3 +95,25 @@ Here's how the code works:
 In the provided example, the input string `"H!el@lo, W#orld!"` is reversed while maintaining the positions of alphabetical characters. The special characters are not affected, and they remain in their original positions.
 
 <---------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+
+#QUESTION NUMBER : 2810. Faulty Keyboard
+1. First declare class named solution and define a method called finalString passed parmeters self , s:str and return type a string
+class Solution:
+    def finalString(self, s: str) -> str:
+
+2. declare a empty string called rev_str
+rev_str = ""
+
+3.The firstloop (for i in range(len(s)):) iterates through each character in the s string
+for i in range(len(s)):
+
+4.if s[i] == "i" : this conditional checks if the current character is if
+  if it is not, the current string will add the rev_str variabele
+ if s[i] == "i":
+    rev_str = rev_str[:i][::-1]
+else:
+    rev_str += s[i]
+
+5.After the loop the rev_str  will be return
+  return rev_str
