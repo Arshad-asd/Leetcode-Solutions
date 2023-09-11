@@ -288,3 +288,43 @@ class Solution:
 
 <----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 
+# QUESTION NO : 2824. Count Pairs Whose Sum is Less than Target
+
+
+```python
+class Solution:
+    def countPairs(self, nums: List[int], target: int) -> int:
+        count = 0
+```
+
+1. **Class Definition**: The code defines a Python class named `Solution`.
+
+2. **Method Definition**: Inside the class, there is a method named `countPairs` which takes three parameters:
+   - `self`: This is a reference to the instance of the class.
+   - `nums`: A list of integers containing the numbers to be processed.
+   - `target`: An integer representing the target sum.
+
+3. **Variable Initialization**: It initializes a variable `count` to 0. This variable will be used to count the pairs of numbers that sum up to the target.
+
+```python
+        for i in range(len(nums)):
+            for j in range(i+1, len(nums)):
+```
+
+4. **Nested Loops**: The code uses two nested `for` loops to iterate through the elements of the `nums` list. The outer loop iterates over `i`, which represents the index of the first number in a potential pair. The inner loop iterates over `j`, which represents the index of the second number in the pair.
+
+5. **Check Pair Sum**: Inside the inner loop, it checks if the sum of the numbers at indices `i` and `j` is less than the target:
+
+```python
+               if nums[i] + nums[j] < target:
+```
+
+6. **Increment `count`**: If the sum is less than the target, it means the pair of numbers at indices `i` and `j` forms a valid pair that sums up to the target. In this case, the `count` variable is incremented by 1:
+
+```python
+                   count += 1
+```
+
+7. **Return Result**: After both loops have completed, the method returns the final value of the `count` variable, which represents the total number of pairs in the `nums` list that sum up to the given `target` value.
+
+<----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
