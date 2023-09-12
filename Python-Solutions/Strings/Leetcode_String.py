@@ -44,3 +44,19 @@ class Solution:
        return rev_str
 
 '''--------------------------------------------------------------------------------------------------------------------------------------'''
+
+#QUESTION NUMBER : 1185. Day of the Week
+
+from datetime import datetime
+import calendar
+class Solution:
+    def dayOfTheWeek(self, day: int, month: int, year: int) -> str:
+        date = ""
+        if day < 10:
+            date += "0"
+        date += str(day) + "/"
+        if month < 10:
+            date += "0"
+        date += str(month) + "/"
+        date += str(year) 
+        return calendar.day_name[datetime.strptime(date,"%d/%m/%Y").weekday()]
