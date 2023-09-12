@@ -117,3 +117,30 @@ else:
 
 5.After the loop the rev_str  will be return
   return rev_str
+
+<---------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+#QUESTION NUMBER :  1185. Day of the Week
+
+1. **Imports**: The code begins by importing two modules from Python's standard library: `datetime` and `calendar`. These modules are used for working with dates and calendars.
+
+2. **Class Definition**: The code defines a class named `Solution`. This class likely contains a method for calculating the day of the week for a given date.
+
+3. **Method Definition**: Inside the class, there is a method named `dayOfTheWeek`. This method takes three parameters:
+   - `day`: An integer representing the day of the month.
+   - `month`: An integer representing the month (1 for January, 2 for February, and so on).
+   - `year`: An integer representing the year.
+
+4. **Date Formatting**: The code initializes an empty string `date` to build a date string in the format "dd/mm/yyyy." It checks if the `day` and `month` are less than 10 (single-digit values) and, if so, adds a leading "0" to format them correctly.
+
+```python
+        return calendar.day_name[datetime.strptime(date, "%d/%m/%Y").weekday()]
+```
+
+5. **Calculating the Day of the Week**:
+   - `datetime.strptime(date, "%d/%m/%Y")`: This line uses the `datetime.strptime` function to parse the `date` string into a datetime object. The format string `"%d/%m/%Y"` specifies the expected date format with day, month, and year.
+   - `.weekday()`: Once the date is parsed, the `.weekday()` method is called on the datetime object to get the day of the week as an integer (0 for Monday, 1 for Tuesday, and so on).
+
+6. **Accessing the Day Name**: Finally, the code uses the `calendar.day_name` list to access the name of the day corresponding to the integer obtained from `.weekday()`. This name is returned as the result of the `dayOfTheWeek` method.
+
+In summary, this code takes a day, month, and year as input, formats them into a date string, converts the string to a datetime object, and then retrieves the day of the week for that date. It returns the name of the day of the week as a string.
