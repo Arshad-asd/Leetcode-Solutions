@@ -132,3 +132,20 @@ class Solution:
         return count
 
 '''--------------------------------------------------------------------------------------------'''
+
+# QUESTION NO : 1200. Minimum Absolute Difference
+
+class Solution:
+    def minimumAbsDifference(self, arr: List[int]) -> List[List[int]]:
+       arr.sort()
+       min_dif = float('inf')
+       res = []
+       for i in range(1 ,len(arr)):
+           cur = abs(arr[i] - arr[i -1])
+           if min_dif > cur:
+               min_dif = cur
+               res = [[arr[i-1], arr[i]]]
+           elif min_dif == cur:
+               res.append([arr[i-1],arr[i]])
+       return res
+'''--------------------------------------------------------------------------------------------'''
