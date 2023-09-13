@@ -328,3 +328,49 @@ class Solution:
 7. **Return Result**: After both loops have completed, the method returns the final value of the `count` variable, which represents the total number of pairs in the `nums` list that sum up to the given `target` value.
 
 <----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+# QUESTION NO : 1200. Minimum Absolute Difference
+
+
+```python
+class Solution:
+    def minimumAbsDifference(self, arr: List[int]) -> List[List[int]]:
+        arr.sort()  # Sort the input list 'arr' in ascending order
+        min_dif = float('inf')  # Initialize 'min_dif' to positive infinity
+        res = []  # Initialize an empty list 'res' to store result pairs
+
+        # Iterate through the sorted 'arr' to find minimum absolute difference pairs
+        for i in range(1, len(arr)):
+            cur = abs(arr[i] - arr[i - 1])  # Calculate the absolute difference between adjacent elements
+
+            # Check if the current absolute difference is less than the minimum found so far
+            if min_dif > cur:
+                min_dif = cur  # Update 'min_dif' with the current absolute difference
+                res = [[arr[i - 1], arr[i]]]  # Create a new result list with the current pair
+            # Check if the current absolute difference is equal to the minimum found so far
+            elif min_dif == cur:
+                res.append([arr[i - 1], arr[i]])  # Add the current pair to the result list
+
+        return res  # Return the list of pairs with minimum absolute difference
+```
+
+Explanation:
+
+1. `arr.sort()`: The input list `arr` is sorted in ascending order. Sorting the array makes it easier to find adjacent elements with minimum absolute differences.
+
+2. `min_dif = float('inf')`: The variable `min_dif` is initialized with positive infinity. This is done to ensure that any calculated absolute difference will be smaller than the initial value of `min_dif` during the first iteration.
+
+3. `res = []`: An empty list `res` is initialized to store the result pairs with the minimum absolute difference.
+
+4. Loop through the sorted `arr` starting from the second element (index 1) with `for i in range(1, len(arr))`.
+
+5. Calculate the absolute difference between the current element (`arr[i]`) and the previous element (`arr[i - 1]`) and store it in the variable `cur`.
+
+6. Check if `cur` is less than the current minimum difference (`min_dif`). If it is, update `min_dif` with the new minimum value (`cur`) and set `res` as a list containing the current pair `[[arr[i - 1], arr[i]]]`. This initializes the result list with the current pair as the minimum absolute difference.
+
+7. If `cur` is equal to the current minimum difference (`min_dif`), append the current pair `[[arr[i - 1], arr[i]]]` to the result list. This handles cases where there are multiple pairs with the same minimum absolute difference.
+
+8. Repeat steps 5-7 for all elements in the sorted `arr`.
+
+9. Finally, return the `res` list containing the pairs with the minimum absolute difference.
+
