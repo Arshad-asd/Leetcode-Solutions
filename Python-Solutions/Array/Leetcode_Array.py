@@ -149,3 +149,9 @@ class Solution:
                res.append([arr[i-1],arr[i]])
        return res
 '''--------------------------------------------------------------------------------------------'''
+
+# QUESTION NO : 2828. Check if a String Is an Acronym of Words
+
+class Solution:
+    def isAcronym(self, words: List[str], s: str) -> bool:
+         return ''.join(word[0] for word in words) == s
