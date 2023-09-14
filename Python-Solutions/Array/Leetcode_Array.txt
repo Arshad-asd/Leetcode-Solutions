@@ -374,3 +374,13 @@ Explanation:
 
 9. Finally, return the `res` list containing the pairs with the minimum absolute difference.
 
+<----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+
+# QUESTION NO : 2828. Check if a String Is an Acronym of Words
+
+class Solution:
+    def isAcronym(self, words: List[str], s: str) -> bool:
+         return ''.join(word[0] for word in words) == s
+
+1 .return boolean value true or false if word[0] string equal to s contains
