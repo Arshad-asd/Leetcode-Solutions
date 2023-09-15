@@ -36,3 +36,10 @@ FROM Employees
 LEFT JOIN EmployeeUNI ON Employees.id = EmployeeUNI.id;
 
 <-------------------------------------------------------------------------------------------------------------------------------->
+
+--Question NO : 1068. Product Sales Analysis I
+
+SELECT Product.product_name,Sales.year,Sales.price FROM Sales
+INNER JOIN Product ON Product.product_id = Sales.product_id;
+
+<-------------------------------------------------------------------------------------------------------------------------------->
