@@ -261,3 +261,8 @@ The unique ID of Meir is 2.
 The unique ID of Winston is 3.
 The unique ID of Jonathan is 1.
 
+Given your desired output, a LEFT JOIN is more intuitive because it starts with all rows from the left table (Employees) 
+and then matches them with corresponding rows from the right table (EmployeesUNI). If there's no match in the right table, 
+you still get all rows from the left table with null values in the columns from the right table. 
+This aligns with your expected output where you want to see all employees from the Employees table, 
+even if there's no matching unique_id in the EmployeesUNI table.
