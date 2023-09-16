@@ -270,3 +270,13 @@ Finally, when all the candies have been distributed, we return the `result` list
 The code simulates the described distribution process, and the result is an array representing how many candies each person received in the end.
 
 <----------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+
+# Question No: 2769. Find the Maximum Achievable Number
+
+class Solution:
+    def theMaximumAchievableX(self, num: int, t: int) -> int:
+        return  num + 2*t 
+ 1.return a sum of two times of t varible
+
+ <----------------------------------------------------------------------------------------------------------------------------------------------------------------------->
