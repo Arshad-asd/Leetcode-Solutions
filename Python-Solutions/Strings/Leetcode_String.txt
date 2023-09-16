@@ -144,3 +144,22 @@ else:
 6. **Accessing the Day Name**: Finally, the code uses the `calendar.day_name` list to access the name of the day corresponding to the integer obtained from `.weekday()`. This name is returned as the result of the `dayOfTheWeek` method.
 
 In summary, this code takes a day, month, and year as input, formats them into a date string, converts the string to a datetime object, and then retrieves the day of the week for that date. It returns the name of the day of the week as a string.
+
+<---------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+# Question NO : 2744. Find Maximum Number of String Pairs
+
+1. `count = 0`: Initialize a variable `count` to keep track of the number of pairs of strings that meet a certain condition.
+
+2. `for i in range(len(words)-1):`: This is the outer loop that iterates over the indices of the `words` list from 0 to the second-to-last element. It uses `i` as the loop variable.
+
+3. `for j in range(i+1, len(words)):`: This is the inner loop that iterates over the indices of the `words` list from `i+1` to the last element. It uses `j` as the loop variable. The inner loop starts from `i+1` to avoid comparing a string with itself and to eliminate duplicate comparisons.
+
+4. `if words[i] == words[j][::-1]:`: This line compares the string at index `i` with the string at index `j` reversed. The `[::-1]` slice notation is used to reverse the string at index `j`. If the two strings are equal, it means that the string at index `i` is the reverse of the string at index `j`.
+
+5. If the condition in the `if` statement is true, it means that you have found a pair of strings where one is the reverse of the other. In this case, you increment the `count` variable by 1.
+
+6. After both loops have finished iterating through all possible pairs of strings in the `words` list, the `count` variable contains the total number of pairs where one string is the reverse of the other.
+
+7. Finally, the method returns the value of `count`, which represents the maximum number of such pairs of strings in the input list `words`.
+
