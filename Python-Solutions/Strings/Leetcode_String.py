@@ -60,3 +60,17 @@ class Solution:
         date += str(month) + "/"
         date += str(year) 
         return calendar.day_name[datetime.strptime(date,"%d/%m/%Y").weekday()]
+
+'''--------------------------------------------------------------------------------------------------------------------------------------'''
+
+#QUESTION NUMBER : 2744. Find Maximum Number of String Pairs
+
+class Solution:
+    def maximumNumberOfStringPairs(self, words: List[str]) -> int:
+        count = 0
+        for i in range(len(words)-1):
+            for j in range(i+1,len(words)):
+                if words[i]==words[j][::-1]:
+                    count += 1
+
+'''--------------------------------------------------------------------------------------------------------------------------------------'''
