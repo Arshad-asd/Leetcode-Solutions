@@ -155,3 +155,12 @@ class Solution:
 class Solution:
     def isAcronym(self, words: List[str], s: str) -> bool:
          return ''.join(word[0] for word in words) == s
+
+
+# QUESTION NO : 2859. Sum of Values at Indices With K Set Bits
+
+class Solution:
+    def sumIndicesWithKSetBits(self, nums: List[int], k: int) -> int:
+       return sum(x for i,x in enumerate(nums) if bin(i).count('1') == k)
+                
+'''--------------------------------------------------------------------------------------------'''
