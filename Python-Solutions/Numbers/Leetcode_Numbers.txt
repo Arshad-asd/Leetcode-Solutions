@@ -280,3 +280,10 @@ class Solution:
  1.return a sum of two times of t varible
 
  <----------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+# Question No: 2652. Sum Multiples
+
+1.The loop should run up to n (inclusive), so I changed range(1, n) to range(1, n + 1)
+2.Each condition i % 3 == 0, i % 5 == 0, and i % 7 == 0 should be checked separately with == 0 to determine divisibility by 3, 5, and 7. Using or between them correctly checks for divisibility by any of these numbers.
+3.return the sum of the conditon statisfied numbers sum
+ <----------------------------------------------------------------------------------------------------------------------------------------------------------------------->
