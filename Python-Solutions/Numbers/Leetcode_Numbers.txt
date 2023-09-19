@@ -287,3 +287,42 @@ class Solution:
 2.Each condition i % 3 == 0, i % 5 == 0, and i % 7 == 0 should be checked separately with == 0 to determine divisibility by 3, 5, and 7. Using or between them correctly checks for divisibility by any of these numbers.
 3.return the sum of the conditon statisfied numbers sum
  <----------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+# Question No: 204. Count Primes
+ # method 1
+
+ Certainly, let's break down the code step by step:
+
+```python
+class Solution:
+    def countPrimes(self, n: int) -> int:
+        if n < 2:
+            return 0
+        primes = [1] * n
+        primes[0] = 0
+        primes[1] = 0
+        i = 2 
+        while i < n:
+            temp = i
+            if primes[i]:
+                temp += i
+                while temp < n:
+                    primes[temp] = 0
+                    temp += i
+            i = i + 1
+        return sum(primes)
+```
+
+This code defines a Python class `Solution` with a method `countPrimes` that takes an integer `n` as input and returns the count of prime numbers less than `n`. Let's go through it step by step:
+
+1. **Input Validation**: The function starts by checking if `n` is less than 2. If `n` is less than 2, it immediately returns 0 because there are no prime numbers less than 2.
+
+2. **Prime Number List Initialization**: An array `primes` of length `n` is created, initially filled with 1's. This array is used to keep track of prime numbers. The element at index `i` will be 1 if `i` is a prime number and 0 otherwise. The first two elements, `primes[0]` and `primes[1]`, are set to 0 because 0 and 1 are not prime numbers.
+
+3. **Loop Through Numbers**: The code uses a `while` loop with a variable `i` starting at 2 (the first prime number).
+
+4. **Sieve of Eratosthenes**: The algorithm being used here is a variation of the Sieve of Eratosthenes. For each prime number `i` found (where `primes[i]` is 1), it marks all multiples of `i` as non-prime by setting `primes[temp]` to 0, where `temp` is incremented by `i`. This step effectively eliminates non-prime numbers from consideration.
+
+5. **Loop Increment**: After marking the multiples of `i`, `i` is incremented by 1, and the process continues until `i` reaches `n`.
+
+6. **Counting Primes**: Finally, the function returns the sum of the `primes` array, which gives the count of prime numbers less than `n`.
