@@ -384,3 +384,21 @@ class Solution:
          return ''.join(word[0] for word in words) == s
 
 1 .return boolean value true or false if word[0] string equal to s contains
+
+<----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+# QUESTION NO : 2798. Number of Employees Who Met the Target
+
+class Solution:
+    def numberOfEmployeesWhoMetTarget(self, hours: List[int], target: int) -> int:
+        count = 0
+        for i in range(len(hours)):
+            if hours[i] >= target:
+                count += 1
+        return count
+
+i.set count =0 initialize
+2.iterate through the loop range 0 to len(hours)
+3.conditons check if hours[i] >= target then increase the count of value
+4.finaly end the loop count will be return 
+<----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
