@@ -176,3 +176,19 @@ class Solution:
         return count
 
 '''--------------------------------------------------------------------------------------------'''
+
+# QUESTION NO : 2553. Separate the Digits in an Array
+
+class Solution:
+    def separateDigits(self, nums: List[int]) -> List[int]:
+        res = []
+        for i in range(len(nums)):
+            if nums[i] > 9:
+                temp = [int(char) for char in str(nums[i])]
+                res.extend(temp)
+            else:
+                res.append(nums[i])
+        return res
+        
+
+'''--------------------------------------------------------------------------------------------'''
