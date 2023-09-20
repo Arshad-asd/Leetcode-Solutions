@@ -164,3 +164,15 @@ class Solution:
        return sum(x for i,x in enumerate(nums) if bin(i).count('1') == k)
                 
 '''--------------------------------------------------------------------------------------------'''
+
+# QUESTION NO : 2798. Number of Employees Who Met the Target
+
+class Solution:
+    def numberOfEmployeesWhoMetTarget(self, hours: List[int], target: int) -> int:
+        count = 0
+        for i in range(len(hours)):
+            if hours[i] >= target:
+                count += 1
+        return count
+
+'''--------------------------------------------------------------------------------------------'''
