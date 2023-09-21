@@ -422,3 +422,38 @@ class Solution:
 4.else the current nums[i] will be add in res list
 5.finaly we return res list
 <----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+# QUESTION NO : 2574. Left and Right Sum Differences
+
+```python
+class Solution:
+    def leftRightDifference(self, nums: List[int]) -> List[int]:
+```
+
+- This code defines a Python class named `Solution`.
+- Inside the class, there's a method named `leftRightDifference`, which takes a list of integers `nums` as input and returns a list of integers.
+- The `-> List[int]` notation specifies that the return type of this method is a list of integers.
+
+Now, let's dive into the code inside the `leftRightDifference` method:
+
+```python
+return [abs(sum(nums[:i + 1])-sum(nums[i:])) for i in range(len(nums))]
+```
+
+Here's a breakdown of what this line of code does:
+
+1. `for i in range(len(nums))`: This part of the code iterates over the indices `i` from `0` to `len(nums) - 1`. In other words, it goes through each element of the input list `nums`.
+
+2. `nums[:i + 1]`: This part of the code slices the `nums` list from the beginning to the index `i + 1`. It creates a new list containing elements from the start up to and including the element at index `i`.
+
+3. `nums[i:]`: This part of the code slices the `nums` list from index `i` to the end. It creates a new list containing elements from index `i` to the last element.
+
+4. `sum(nums[:i + 1])`: This calculates the sum of the elements in the left portion of the list (from the beginning up to and including the element at index `i`).
+
+5. `sum(nums[i:])`: This calculates the sum of the elements in the right portion of the list (from index `i` to the end).
+
+6. `abs(sum(nums[:i + 1])-sum(nums[i:]))`: This calculates the absolute difference between the sums of the left and right portions of the list.
+
+7. The entire expression is enclosed in a list comprehension, which means it calculates this absolute difference for each `i` in the range and creates a list containing all these absolute differences.
+
+In summary, the `leftRightDifference` method takes an input list of integers, and for each element in the list, it calculates the absolute difference between the sum of the elements to the left of that element and the sum of the elements to the right of that element. It returns a list of these absolute differences.
