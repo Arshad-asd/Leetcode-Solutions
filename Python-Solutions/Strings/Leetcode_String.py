@@ -74,3 +74,26 @@ class Solution:
                     count += 1
 
 '''--------------------------------------------------------------------------------------------------------------------------------------'''
+
+
+#QUESTION NUMBER :  1332. Remove Palindromic Subsequences
+
+# Method : 1
+
+class Solution:
+    def removePalindromeSub(self, s: str) -> int:
+       return 1 if s == s [::-1] else 2
+
+# Method Number: 2
+class Solution:
+    def removePalindromeSub(self, s: str) -> int:
+        if not s: return 0
+        l,r = 0,len(s)-1
+        while l<r:
+            if s[l] != s[r]:
+                return 2
+            l += 1
+            r -= 1
+        return 1
+
+'''--------------------------------------------------------------------------------------------------------------------------------------'''
