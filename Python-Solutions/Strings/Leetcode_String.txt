@@ -163,3 +163,62 @@ In summary, this code takes a day, month, and year as input, formats them into a
 
 7. Finally, the method returns the value of `count`, which represents the maximum number of such pairs of strings in the input list `words`.
 
+
+<---------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+#QUESTION NUMBER : 1332. Remove Palindromic Subsequences
+
+### Method 1:
+
+```python
+class Solution:
+    def removePalindromeSub(self, s: str) -> int:
+       return 1 if s == s[::-1] else 2
+```
+
+**Explanation**:
+
+- This method provides a concise solution to the problem.
+
+- The `removePalindromeSub` function takes a string `s` as input.
+
+- It checks whether the string `s` is a palindrome. A palindrome is a string that reads the same forwards and backwards.
+
+- If `s` is a palindrome (i.e., it is the same as its reverse, which is `s[::-1]`), it returns 1. This means you can remove all characters in one step because the entire string is already a palindrome.
+
+- If `s` is not a palindrome, it returns 2. This means you cannot make `s` a palindrome by removing characters, and it would take at least two removals.
+
+### Method 2:
+
+```python
+class Solution:
+    def removePalindromeSub(self, s: str) -> int:
+        if not s: return 0
+        l, r = 0, len(s) - 1
+        while l < r:
+            if s[l] != s[r]:
+                return 2
+            l += 1
+            r -= 1
+        return 1
+```
+
+**Explanation**:
+
+- This method provides a more detailed approach to solving the problem.
+
+- The `removePalindromeSub` function takes a string `s` as input.
+
+- It first checks if the input string `s` is empty. If it's empty, it returns 0 because there are no characters to remove.
+
+- Next, it initializes two pointers, `l` and `r`, to the start and end of the string, respectively.
+
+- It enters a `while` loop that continues as long as `l` is less than `r`. In each iteration, it compares the characters at positions `l` and `r`.
+
+- If the characters are not equal, it means that the string is not a palindrome. In this case, it returns 2 because you cannot make `s` a palindrome by removing characters.
+
+- If the characters are equal, it moves the `l` pointer to the right (incrementing `l`) and the `r` pointer to the left (decrementing `r`) to check the next pair of characters.
+
+- If the loop completes without finding any differing characters, it means that the entire string is a palindrome, and it returns 1. This means you can remove all characters in one step.
+
+Both methods aim to determine whether the given string can be made into a palindrome by removing characters and return either 1 or 2 based on the result. Method 1 uses a concise approach, while Method 2 provides a more detailed and iterative solution.
