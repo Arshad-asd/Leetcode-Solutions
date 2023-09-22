@@ -457,3 +457,44 @@ Here's a breakdown of what this line of code does:
 7. The entire expression is enclosed in a list comprehension, which means it calculates this absolute difference for each `i` in the range and creates a list containing all these absolute differences.
 
 In summary, the `leftRightDifference` method takes an input list of integers, and for each element in the list, it calculates the absolute difference between the sum of the elements to the left of that element and the sum of the elements to the right of that element. It returns a list of these absolute differences.
+
+<----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+# QUESTION NO : 1331. Rank Transform of an Array
+
+```python
+class Solution:
+    def arrayRankTransform(self, arr: List[int]) -> List[int]:
+        store = {}
+        sort_arr = sorted(set(arr))
+
+        for i in range(len(sort_arr)):
+            store[sort_arr[i]] = i + 1
+
+        for i in range(len(arr)):
+            arr[i] = store[arr[i]]
+
+        return arr
+```
+
+This function takes a list of integers `arr` as input and returns a list of integers representing the ranks of the elements in the input list.
+
+Here's a step-by-step explanation:
+
+1. `store` is initialized as an empty dictionary. This dictionary will be used to store the mapping of unique elements in the input list to their corresponding ranks.
+
+2. `set(arr)` is used to create a set containing unique elements from the input list `arr`. This is done to remove duplicate values and ensure that each unique value in the list is assigned a distinct rank.
+
+3. `sorted(set(arr))` sorts the unique elements in ascending order and stores them in the `sort_arr` list. This will be used to determine the ranks.
+
+4. The first loop iterates through `sort_arr`, which contains the unique elements in sorted order. For each unique element, it assigns a rank starting from 1 and stores this mapping in the `store` dictionary. The rank is determined by the index `i` in the sorted list, incremented by 1. This loop ensures that each unique element is assigned a unique rank.
+
+5. After the loop, the `store` dictionary contains mappings of unique elements to their ranks.
+
+6. The second loop iterates through the original input list `arr`. For each element in `arr`, it replaces the element with its corresponding rank from the `store` dictionary. This loop effectively transforms the input list into a list of ranks.
+
+7. Finally, the transformed list of ranks is returned as the output of the `arrayRankTransform` function.
+
+The purpose of this code is to assign ranks to the elements in the input list based on their order in a sorted version of the list. The output list will contain the ranks of the elements in the same order as they appeared in the input list.
+
+<----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
