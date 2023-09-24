@@ -222,3 +222,24 @@ class Solution:
 - If the loop completes without finding any differing characters, it means that the entire string is a palindrome, and it returns 1. This means you can remove all characters in one step.
 
 Both methods aim to determine whether the given string can be made into a palindrome by removing characters and return either 1 or 2 based on the result. Method 1 uses a concise approach, while Method 2 provides a more detailed and iterative solution.
+
+<---------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+#QUESTION NUMBER : 2788. Split Strings by Separator
+
+class Solution:
+    def splitWordsBySeparator(self, words: List[str], separator: str) -> List[str]:
+        ls = [] 
+        for data in words:
+            word = data.split(separator)
+            for data in word:
+                if(data != ""):
+                    ls.append(data)
+        return ls
+
+1. initialize ls named empty list
+2. iterate data named iterator thorugh words list useing forloop
+3. then assign word temp variabele stored dat.split(Separator) it separate the "." contain string
+4. inner loop start data named iterator used iterate in word string 
+5. check if(data != "") then true append data to ls list
+6.finaly rerturn ls list
