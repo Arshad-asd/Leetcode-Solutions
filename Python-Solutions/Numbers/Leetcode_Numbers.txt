@@ -326,3 +326,79 @@ This code defines a Python class `Solution` with a method `countPrimes` that tak
 5. **Loop Increment**: After marking the multiples of `i`, `i` is incremented by 1, and the process continues until `i` reaches `n`.
 
 6. **Counting Primes**: Finally, the function returns the sum of the `primes` array, which gives the count of prime numbers less than `n`.
+
+<----------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+# Question No : 2843. Count Symmetric Integers
+
+Certainly! Let's break down the code step by step:
+
+```python
+class Solution:
+    def countSymmetricIntegers(self, low: int, high: int) -> int:
+```
+
+This code defines a class `Solution` with a method `countSymmetricIntegers` that takes two integer arguments, `low` and `high`, and returns an integer.
+
+```python
+        def get_digit_sum(num_str):
+            return sum(int(digit) for digit in num_str)
+```
+
+Here, we define a helper function `get_digit_sum`. This function takes a string `num_str` as input and calculates the sum of its digits. It converts each digit to an integer using `int(digit)` and then uses the `sum` function to add them up.
+
+```python
+        count = 0
+```
+
+We initialize a variable `count` to keep track of the number of symmetric integers found.
+
+```python
+        for num in range(low, high + 1):
+```
+
+We use a `for` loop to iterate through a range of numbers from `low` to `high`, inclusive. This loop will consider each number in the specified range.
+
+```python
+            num_str = str(num)
+```
+
+For each number `num`, we convert it to a string `num_str`. This allows us to work with its digits individually.
+
+```python
+            num_len = len(num_str)
+```
+
+We calculate the length of the string representation of the number `num` and store it in the variable `num_len`. This is used to check if the number has an even or odd number of digits.
+
+```python
+            if num_len % 2 == 0:
+```
+
+We use the modulo operator `%` to check if `num_len` is even. If it's even, we proceed to check if the number is symmetric.
+
+```python
+                first_half = num_str[:num_len // 2]
+                second_half = num_str[num_len // 2:]
+```
+
+For even-length numbers, we split the string `num_str` into two halves: `first_half` and `second_half`. This division allows us to calculate the sum of the first half of digits and the sum of the second half of digits separately.
+
+```python
+                if get_digit_sum(first_half) == get_digit_sum(second_half):
+```
+
+We call the `get_digit_sum` function on both `first_half` and `second_half` to calculate their respective digit sums. Then, we compare these two sums to check if they are equal.
+
+```python
+                    count += 1
+```
+
+If the sums of the first and second halves are equal, it means the number is symmetric. In that case, we increment the `count` variable by 1 to keep track of the number of symmetric integers found.
+
+```python
+        return count
+```
+
+<----------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
