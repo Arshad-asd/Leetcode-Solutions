@@ -141,3 +141,25 @@ class Solution:
         return sum(is_prime)
 
 '''--------------------------------------------------------------------------------------------'''
+
+# Question No : 2843. Count Symmetric Integers
+
+class Solution:
+    def countSymmetricIntegers(self, low: int, high: int) -> int:
+        def get_digit_sum(num_str):
+            return sum(int(digit) for digit in num_str)
+
+        count = 0
+
+        for num in range(low, high + 1):
+            num_str = str(num)
+            num_len = len(num_str)
+
+            if num_len % 2 == 0:  # Check if it has an even number of digits
+                first_half = num_str[:num_len // 2]
+                second_half = num_str[num_len // 2:]
+
+                if get_digit_sum(first_half) == get_digit_sum(second_half):
+                    count += 1
+
+        return count
