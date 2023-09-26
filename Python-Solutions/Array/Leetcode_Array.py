@@ -219,3 +219,11 @@ class Solution:
 
 
 '''--------------------------------------------------------------------------------------------'''
+# QUESTION NO : 2535. Difference Between Element Sum and Digit Sum of an Array
+
+class Solution:
+    def differenceOfSum(self, nums: List[int]) -> int:
+        temp = [int(digit) for number in nums for digit in str(number)]
+        return sum(nums) - sum(temp)
+
+'''--------------------------------------------------------------------------------------------'''
