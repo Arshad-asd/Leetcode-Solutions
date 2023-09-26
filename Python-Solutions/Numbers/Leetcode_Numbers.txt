@@ -402,3 +402,11 @@ If the sums of the first and second halves are equal, it means the number is sym
 
 <----------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 
+# Question No :2469. Convert the Temperature
+
+class Solution:
+    def convertTemperature(self, celsius: float) -> List[float]:
+        return [celsius + 273.15,celsius * 1.80 + 32.00]
+
+1.return the list , the list contain two indexes [kelvin, fahrenheit].
+2.Kelvin = Celsius + 273.15 , Fahrenheit = Celsius * 1.80 + 32.00
