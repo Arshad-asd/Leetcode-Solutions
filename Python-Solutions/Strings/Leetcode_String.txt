@@ -243,3 +243,19 @@ class Solution:
 4. inner loop start data named iterator used iterate in word string 
 5. check if(data != "") then true append data to ls list
 6.finaly rerturn ls list
+
+<---------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+#QUESTION NUMBER :  2710. Remove Trailing Zeros From a String
+
+class Solution:
+    def removeTrailingZeros(self, num: str) -> str:
+       while(num[-1] == '0'):
+           num = num[:-1]
+       return num
+
+1.checking condition the last index vlaue equal to '0' then enter while loop
+2.and assign new string in to num 
+3.finaly return the updated string
+
+<---------------------------------------------------------------------------------------------------------------------------------------------------------------------->
