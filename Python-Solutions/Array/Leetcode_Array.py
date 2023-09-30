@@ -219,11 +219,20 @@ class Solution:
 
 
 '''--------------------------------------------------------------------------------------------'''
+
 # QUESTION NO : 2535. Difference Between Element Sum and Digit Sum of an Array
 
 class Solution:
     def differenceOfSum(self, nums: List[int]) -> int:
         temp = [int(digit) for number in nums for digit in str(number)]
         return sum(nums) - sum(temp)
+
+'''--------------------------------------------------------------------------------------------'''
+# QUESTION NO : 2418. Sort the People
+
+class Solution:
+    def sortPeople(self, names: List[str], heights: List[int]) -> List[str]:
+       _,names = zip(*sorted(zip(heights,names),reverse = True))
+       return list(names)
 
 '''--------------------------------------------------------------------------------------------'''
