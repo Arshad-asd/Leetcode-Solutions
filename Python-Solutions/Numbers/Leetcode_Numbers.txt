@@ -410,3 +410,5 @@ class Solution:
 
 1.return the list , the list contain two indexes [kelvin, fahrenheit].
 2.Kelvin = Celsius + 273.15 , Fahrenheit = Celsius * 1.80 + 32.00
+
+<----------------------------------------------------------------------------------------------------------------------------------------------------------------------->
