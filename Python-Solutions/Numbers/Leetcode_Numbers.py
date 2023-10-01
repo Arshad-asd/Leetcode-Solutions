@@ -173,3 +173,11 @@ class Solution:
         return [celsius + 273.15,celsius * 1.80 + 32.00]
 
 '''--------------------------------------------------------------------------------------------'''
+
+# Question No : 2413. Smallest Even Multiple
+
+class Solution:
+    def smallestEvenMultiple(self, n: int) -> int:
+        return n if n % 2 == 0 else n * 2
+
+'''--------------------------------------------------------------------------------------------'''
