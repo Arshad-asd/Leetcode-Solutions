@@ -412,3 +412,9 @@ class Solution:
 2.Kelvin = Celsius + 273.15 , Fahrenheit = Celsius * 1.80 + 32.00
 
 <----------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+# Question No : 2413. Smallest Even Multiple
+class Solution:
+    def smallestEvenMultiple(self, n: int) -> int:
+        return n if n % 2 == 0 else n * 2
+1. return n if multiple of 2 is n other wise return the multiple of 2
