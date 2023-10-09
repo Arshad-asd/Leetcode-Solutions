@@ -121,3 +121,18 @@ class Solution:
        return num
 
 '''--------------------------------------------------------------------------------------------------------------------------------------'''
+#QUESTION NUMBER : 1021. Remove Outermost Parentheses
+
+class Solution:
+    def removeOuterParentheses(self, s: str) -> str:
+        res = []
+        count = 0
+        for i in s :
+            if i == '(' and count > 0:
+                res.append(i)
+            if i == ')' and count > 1:
+                res.append(i)
+            count += 1 if i == '(' else -1
+        return "".join(res)
+
+'''--------------------------------------------------------------------------------------------------------------------------------------'''
