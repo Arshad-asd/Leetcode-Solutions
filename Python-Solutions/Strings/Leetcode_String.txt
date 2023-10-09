@@ -259,3 +259,15 @@ class Solution:
 3.finaly return the updated string
 
 <---------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+#QUESTION NUMBER : 1021. Remove Outermost Parentheses
+
+1.initialize result list and count variabele with 0
+2.first iterates the s string useing forloop
+3.check the condition if i == '(' and count > 0: it means that the value of i equal to open Parentheses and count value grater than 0
+4.check the condition if i == ')' and count > 1: it means that the value of i equal to closed Parentheses and count value grater than 1
+5.if any condition true the res list append the current i value
+6.finaly check the if conditon for increment the count value the Parentheses is open if open the counter in crease 1 other wise decrease 1
+7.finaly return the join string with res list
+
+<---------------------------------------------------------------------------------------------------------------------------------------------------------------------->
