@@ -522,3 +522,14 @@ class Solution:
 2.return names
 
 <----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+# QUESTION NO : 1365. How Many Numbers Are Smaller Than the Current Number
+
+1.first initialize a empty list
+2.iterate for loop used in nums list using outer loop i and inner loop j and intialize insdie i loop count variabele wtih 0 value assigned
+3.check condition if nums[j] < nums[i] and i != j then the counter value increase by one under the j loop exists
+4.the j loop will be stop the current count  value add in an result list
+5.final return the result list
+<----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+# QUESTION NO : 1389. Create Target Array in the Given Order
