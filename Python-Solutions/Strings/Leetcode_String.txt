@@ -271,3 +271,12 @@ class Solution:
 7.finaly return the join string with res list
 
 <---------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+#QUESTION NUMBER : 1678. Goal Parser Interpretation
+ class Solution:
+    def interpret(self, command: str) -> str:
+         command = command.replace("()","o")
+         command = command.replace("(al)", "al")
+         return command
+ 1. assign replaced strings into command string variabele () replace to o dnd (al) to al
+ 2.return command string
