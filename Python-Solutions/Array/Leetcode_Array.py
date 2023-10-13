@@ -262,3 +262,16 @@ class Solution:
        return target
 
 '''--------------------------------------------------------------------------------------------'''
+
+# QUESTION NO : 2114. Maximum Number of Words Found in Sentences
+
+class Solution:
+    def mostWordsFound(self, sentences: List[str]) -> int:
+        count = 0
+        for i in range(len(sentences)):
+                array = sentences[i].split(' ')
+                if len(array) > count:
+                    count = len(array)
+        return count
+
+'''--------------------------------------------------------------------------------------------'''
