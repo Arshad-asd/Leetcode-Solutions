@@ -145,3 +145,13 @@ class Solution:
          command = command.replace("(al)", "al")
          return command
 '''--------------------------------------------------------------------------------------------------------------------------------------'''
+#QUESTION NUMBER : 1528. Shuffle String
+
+class Solution:
+    def restoreString(self, s: str, indices: List[int]) -> str:
+        res = ''
+        for i in range(len(indices)):
+           res += s[indices.index(i)]
+        return res
+
+'''--------------------------------------------------------------------------------------------------------------------------------------'''
