@@ -280,3 +280,21 @@ class Solution:
          return command
  1. assign replaced strings into command string variabele () replace to o dnd (al) to al
  2.return command string
+
+<---------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+ 
+ #QUESTION NUMBER : 1528. Shuffle String
+
+ class Solution:
+    def restoreString(self, s: str, indices: List[int]) -> str:
+        res = ''
+        for i in range(len(indices)):
+           res += s[indices.index(i)]
+        return res
+
+1.intialize a empty string
+2.for loop used to iteate the indices list
+3.then add res string s[indiceis.index(i)] 
+4.return res
+
+<---------------------------------------------------------------------------------------------------------------------------------------------------------------------->
