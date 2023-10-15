@@ -553,3 +553,21 @@ class Solution:
  4.check condition len(arry) > count then count assign len(array)
  5.under return count
 <----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+# QUESTION NO : 1816. Truncate Sentence
+
+class Solution:
+    def truncateSentence(self, s: str, k: int) -> str:
+        arr = s.split(" ")
+        res = ''
+        for i in range(k):
+           res += arr[i]
+           if k-1!=i:
+               res += ' '
+        return res
+
+1.intialize arr list and assign value splited string , intialize res empty string
+2.for loop used to iteate the length of K
+3.assign each vaule of arr i position  to res string
+4.then checking the k-1 value not equal to i then add the space to the res string
+5.finaly return the res string
+<----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
