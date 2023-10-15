@@ -275,3 +275,16 @@ class Solution:
         return count
 
 '''--------------------------------------------------------------------------------------------'''
+# QUESTION NO : 1816. Truncate Sentence
+
+class Solution:
+    def truncateSentence(self, s: str, k: int) -> str:
+        arr = s.split(" ")
+        res = ''
+        for i in range(k):
+           res += arr[i]
+           if k-1!=i:
+               res += ' '
+        return res
+
+'''--------------------------------------------------------------------------------------------'''
