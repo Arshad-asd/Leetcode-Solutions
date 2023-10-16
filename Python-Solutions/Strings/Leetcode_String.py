@@ -161,3 +161,26 @@ class Solution:
     def balancedStringSplit(self, s: str) -> int:
        return list(accumulate(1 if c =='R' else -1 for c in s)).count(0)
 '''--------------------------------------------------------------------------------------------------------------------------------------'''
+#QUESTION NUMBER : 1592. Rearrange Spaces Between Words
+
+class Solution:
+    def reorderSpaces(self, text: str) -> str:
+        space = text.count(" ")
+        words = text.split()
+        wordlen = len(words)
+        if wordlen-1>0:
+            c = space//(wordlen-1)
+        else:
+            c = space
+        res = ""
+        for i in words:
+            res += i
+            if space >= c:
+                res += " "*c
+                space -= c
+
+        if space>0:
+            res += " "*space
+        return res
+
+'''--------------------------------------------------------------------------------------------------------------------------------------'''
