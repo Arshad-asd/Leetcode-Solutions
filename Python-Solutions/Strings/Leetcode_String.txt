@@ -298,3 +298,14 @@ class Solution:
 4.return res
 
 <---------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+#QUESTION NUMBER : 1221. Split a String in Balanced Strings
+class Solution:
+    def balancedStringSplit(self, s: str) -> int:
+       return list(accumulate(1 if c =='R' else -1 for c in s)).count(0)
+
+1.set a flag to zero and loop through characters in string;
+2.if char is R, add flag by 1; if char is L, subtract 1 from flag;
+3.add 1 to counter whenever flag is 0.
+4.One-line implementation utilizing accumulate function is below.
+<---------------------------------------------------------------------------------------------------------------------------------------------------------------------->
