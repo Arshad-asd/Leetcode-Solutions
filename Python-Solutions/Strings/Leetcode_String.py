@@ -49,6 +49,7 @@ class Solution:
 
 from datetime import datetime
 import calendar
+from itertools import accumulate
 class Solution:
     def dayOfTheWeek(self, day: int, month: int, year: int) -> str:
         date = ""
@@ -154,4 +155,9 @@ class Solution:
            res += s[indices.index(i)]
         return res
 
+'''--------------------------------------------------------------------------------------------------------------------------------------'''
+#QUESTION NUMBER : 1221. Split a String in Balanced Strings
+class Solution:
+    def balancedStringSplit(self, s: str) -> int:
+       return list(accumulate(1 if c =='R' else -1 for c in s)).count(0)
 '''--------------------------------------------------------------------------------------------------------------------------------------'''
