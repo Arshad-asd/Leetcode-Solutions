@@ -571,3 +571,15 @@ class Solution:
 4.then checking the k-1 value not equal to i then add the space to the res string
 5.finaly return the res string
 <----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+# QUESTION NO : 1920. Build Array from Permutation
+class Solution:
+    def buildArray(self, nums: List[int]) -> List[int]:
+       ans = []
+       for i in range(len(nums)):
+           ans.append(nums[nums[i]])
+       return ans
+
+1.intialize a ans named empty list
+2.for loop used to iterate in the range of 0 to len(nums)
+3.append to ans list the nums[nums[i]] ,
+4.return the ans list
