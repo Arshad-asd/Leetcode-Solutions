@@ -314,3 +314,12 @@ class Solution:
 
 
 <---------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+#QUESTION NUMBER : 2325. Decode the Message
+1.intialize a dictionary named as dic and also intialize c = 97 for char code of alphabets
+2.for loop used to iterate the key string length
+3.condition check if key[i] not in dic: true add the c value based character to the dic[key[i]] = chr(c)
+4.and increase the count of the c variable
+4.intialize a empty string named as
+5. for loop used to iteate the Message string
+6.assign the corresponding index i value to the result string
+7.final return the result string
