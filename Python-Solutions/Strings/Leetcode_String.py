@@ -184,3 +184,19 @@ class Solution:
         return res
 
 '''--------------------------------------------------------------------------------------------------------------------------------------'''
+#QUESTION NUMBER : 2325. Decode the Message
+class Solution:
+    def decodeMessage(self, key: str, message: str) -> str:
+       dic = {' ':' '}
+       c = 97 
+       for i in range(len(key)):
+           if key[i] not in dic:
+               dic[key[i]] = chr(c)
+               c += 1
+
+       result = ''
+       for i in range(len(message)):
+            result += dic[message[i]]  
+       return result
+
+'''--------------------------------------------------------------------------------------------------------------------------------------'''
