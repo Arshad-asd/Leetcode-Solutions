@@ -297,3 +297,16 @@ class Solution:
        return ans
 
 '''--------------------------------------------------------------------------------------------'''
+#QUESTION NUMBER : 2367. Number of Arithmetic Triplets
+
+class Solution:
+    def arithmeticTriplets(self, nums: List[int], diff: int) -> int:
+        count = 0
+        seen = set()
+        for n in nums:
+            seen.add(n)
+            if n-diff in seen and n-2*diff in seen:
+                count += 1
+        return count
+
+'''--------------------------------------------------------------------------------------------'''
