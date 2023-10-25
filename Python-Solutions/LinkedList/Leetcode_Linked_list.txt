@@ -165,3 +165,14 @@ This implementation correctly removes all nodes with the target value while main
 This code efficiently merges two sorted linked lists in a way that preserves the order of the elements while using a constant amount of extra space. It's a common technique used in various programming scenarios involving linked lists.
 
 <---------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+# QUESTION NO: 2236. Root Equals Sum of Children
+
+The Solution class contains a method named checkTree, which takes a TreeNode called root as an argument and returns a boolean (True or False).
+
+1.Inside the checkTree method:
+
+2.It compares the value of the current node (root.val) with the sum of values of its left and right children (root.left.val + root.right.val).
+3.If these values are equal, it returns True, indicating that the condition holds for the current node.
+4.If the values are not equal, it returns False, indicating that the condition does not hold for the current node.
+
+<---------------------------------------------------------------------------------------------------------------------------------------------------------------------->
