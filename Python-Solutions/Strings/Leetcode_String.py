@@ -200,7 +200,13 @@ class Solution:
        return result
 
 '''--------------------------------------------------------------------------------------------------------------------------------------'''
+#QUESTION NUMBER : 2160. Minimum Sum of Four Digit Number After Splitting Digits
 
+class Solution:
+    def minimumSum(self, num: int) -> int:
+        nums = list(str(num))
+        nums.sort()
+        return int(nums[0] + nums[-1]) + int(nums[1] + nums[2])
 
 
 '''--------------------------------------------------------------------------------------------------------------------------------------'''
