@@ -122,26 +122,26 @@ else:
 
 #QUESTION NUMBER :  1185. Day of the Week
 
-1. **Imports**: The code begins by importing two modules from Python's standard library: `datetime` and `calendar`. These modules are used for working with dates and calendars.
+1. Imports: The code begins by importing two modules from Python's standard library: `datetime` and `calendar`. These modules are used for working with dates and calendars.
 
-2. **Class Definition**: The code defines a class named `Solution`. This class likely contains a method for calculating the day of the week for a given date.
+2. Class Definition: The code defines a class named `Solution`. This class likely contains a method for calculating the day of the week for a given date.
 
-3. **Method Definition**: Inside the class, there is a method named `dayOfTheWeek`. This method takes three parameters:
+3. Method Definition: Inside the class, there is a method named `dayOfTheWeek`. This method takes three parameters:
    - `day`: An integer representing the day of the month.
    - `month`: An integer representing the month (1 for January, 2 for February, and so on).
    - `year`: An integer representing the year.
 
-4. **Date Formatting**: The code initializes an empty string `date` to build a date string in the format "dd/mm/yyyy." It checks if the `day` and `month` are less than 10 (single-digit values) and, if so, adds a leading "0" to format them correctly.
+4. Date Formatting: The code initializes an empty string `date` to build a date string in the format "dd/mm/yyyy." It checks if the `day` and `month` are less than 10 (single-digit values) and, if so, adds a leading "0" to format them correctly.
 
 ```python
         return calendar.day_name[datetime.strptime(date, "%d/%m/%Y").weekday()]
 ```
 
-5. **Calculating the Day of the Week**:
+5. Calculating the Day of the Week:
    - `datetime.strptime(date, "%d/%m/%Y")`: This line uses the `datetime.strptime` function to parse the `date` string into a datetime object. The format string `"%d/%m/%Y"` specifies the expected date format with day, month, and year.
    - `.weekday()`: Once the date is parsed, the `.weekday()` method is called on the datetime object to get the day of the week as an integer (0 for Monday, 1 for Tuesday, and so on).
 
-6. **Accessing the Day Name**: Finally, the code uses the `calendar.day_name` list to access the name of the day corresponding to the integer obtained from `.weekday()`. This name is returned as the result of the `dayOfTheWeek` method.
+6. Accessing the Day Name: Finally, the code uses the `calendar.day_name` list to access the name of the day corresponding to the integer obtained from `.weekday()`. This name is returned as the result of the `dayOfTheWeek` method.
 
 In summary, this code takes a day, month, and year as input, formats them into a date string, converts the string to a datetime object, and then retrieves the day of the week for that date. It returns the name of the day of the week as a string.
 
@@ -176,7 +176,7 @@ class Solution:
        return 1 if s == s[::-1] else 2
 ```
 
-**Explanation**:
+Explanation:
 
 - This method provides a concise solution to the problem.
 
@@ -203,7 +203,7 @@ class Solution:
         return 1
 ```
 
-**Explanation**:
+Explanation:
 
 - This method provides a more detailed approach to solving the problem.
 
@@ -323,3 +323,42 @@ class Solution:
 5. for loop used to iteate the Message string
 6.assign the corresponding index i value to the result string
 7.final return the result string
+
+<---------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+QUESTION NUMBER : 2160. Minimum Sum of Four Digit Number After Splitting Digits
+
+class Solution:
+    def minimumSum(self, num: int) -> int:
+        nums = list(str(num))
+        nums.sort()
+        return int(nums[0] + nums[-1]) + int(nums[1] + nums[2])
+
+
+1. Class Definition:
+   - `class Solution:`: Defines a class named `Solution`.
+
+2. Method Definition:
+   - `def minimumSum(self, num: int) -> int:`: Defines a method named `minimumSum` within the `Solution` class. It takes an integer `num` as input and returns an integer.
+
+3. Convert Integer to List of Digits:
+   - `nums = list(str(num))`: Converts the input integer `num` to a list of its digits. The `str(num)` converts the integer to a string, and `list()` converts the string to a list of characters.
+
+4. Sort the List:
+   - `nums.sort()`: Sorts the list of digits in ascending order. After this line, `nums` will be a list of digits sorted from the smallest to the largest.
+
+5. Calculate the Minimum Sum:
+   - `return int(nums[0] + nums[-1]) + int(nums[1] + nums[2])`: Constructs two numbers from the sorted list of digits:
+     - `int(nums[0] + nums[-1])`: Forms a number by concatenating the smallest and largest digits and converts it to an integer.
+     - `int(nums[1] + nums[2])`: Forms a number by concatenating the second and third smallest digits and converts it to an integer.
+     - Returns the sum of these two numbers.
+
+Example:
+Suppose `num = 456`. The code will execute as follows:
+
+- Convert `456` to `['4', '5', '6']`.
+- Sort the list to get `['4', '5', '6']`.
+- Construct two numbers: `int('4' + '6')` and `int('5' + '6')`.
+- Return the sum: `46 + 56 = 102`.
+
+
+<---------------------------------------------------------------------------------------------------------------------------------------------------------------------->
