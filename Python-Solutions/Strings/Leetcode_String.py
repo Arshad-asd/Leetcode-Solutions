@@ -210,3 +210,16 @@ class Solution:
 
 
 '''--------------------------------------------------------------------------------------------------------------------------------------'''
+#QUESTION NUMBER : 1859. Sorting the Sentence
+class Solution:
+    def sortSentence(self, s: str) -> str:
+        words = s.split()
+        
+        sorted_words = sorted(words, key=lambda x: int(''.join(filter(str.isdigit, x))))
+
+        words_without_numbers = [''.join(filter(str.isalpha, word)) for word in sorted_words]
+
+        result = ' '.join(words_without_numbers)
+
+        return result
+'''--------------------------------------------------------------------------------------------------------------------------------------'''
