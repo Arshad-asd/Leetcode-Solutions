@@ -362,3 +362,28 @@ Suppose `num = 456`. The code will execute as follows:
 
 
 <---------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+#QUESTION NUMBER : 1859. Sorting the Sentence
+
+
+1. Split the input string into words.
+2. Sort the words based on the numeric part.
+3. Remove the numeric part from each word.
+4. Join the sorted words into a new string.
+
+
+def sort_and_remove_numbers(s):
+    # Step 1: Split the string into words
+    words = s.split()
+
+    # Step 2: Sort the words based on the numeric part
+    sorted_words = sorted(words, key=lambda x: int(''.join(filter(str.isdigit, x))))
+
+    # Step 3: Remove the numeric part from each word
+    words_without_numbers = [''.join(filter(str.isalpha, word)) for word in sorted_words]
+
+    # Step 4: Join the sorted words into a new string
+    result = ' '.join(words_without_numbers)
+
+    return result
+<---------------------------------------------------------------------------------------------------------------------------------------------------------------------->
