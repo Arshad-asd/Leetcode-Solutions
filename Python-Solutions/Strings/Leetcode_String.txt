@@ -387,3 +387,40 @@ def sort_and_remove_numbers(s):
 
     return result
 <---------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+ 
+ #QUESTION NUMBER : 1844. Replace All Digits with Characters
+
+1. **Initialization:**
+   - `result = ''`: Initialize an empty string `result` to store the final result.
+
+2. **Iterate Over Each Character:**
+   - `for i in range(len(s)):`: Loop through each character in the input string `s` using the index `i`.
+
+3. **Check if the Character is Numeric:**
+   - `if s[i].isnumeric() == True:`: Check if the current character at index `i` is numeric.
+
+4. **Replace Numeric Character:**
+   - `result += chr(ord(s[i-1]) + int(s[i]))`: If the current character is numeric, replace it with the character that is `int(s[i])` positions ahead of the character at index `i-1`. Here's the breakdown:
+      - `s[i-1]`: Get the character at the position immediately before the numeric character.
+      - `ord(s[i-1])`: Get the ASCII code of the character.
+      - `int(s[i])`: Convert the numeric character to an integer.
+      - `chr(ord(s[i-1]) + int(s[i]))`: Add the integer value to the ASCII code and convert it back to a character.
+      - The resulting character is added to the `result`.
+
+5. **Keep Non-Numeric Characters Unchanged:**
+   - `else:`: If the current character is not numeric, keep it unchanged.
+   - `result += s[i]`: Append the current non-numeric character to the `result`.
+
+6. **Return the Result:**
+   - `return result`: Return the final result after processing all characters in the input string.
+
+**Example:**
+Suppose `s = "a1b2c3"`. The logic will execute as follows:
+- `s[0]` is not numeric, so `'a'` is added to the result.
+- `s[1]` is numeric (`'1'`), so `chr(ord(s[0]) + int(s[1]))` becomes `'a' + 1 = 'b'`, and `'b'` is added to the result.
+- Similarly, `'b' + 2` becomes `'d'`, and `'c' + 3` becomes `'f'`.
+- The final result is `'abc123'` replaced with `'abdf'`.
+
+So, `Solution().replaceDigits("a1b2c3")` will return `'abdf'`.
+
+<---------------------------------------------------------------------------------------------------------------------------------------------------------------------->
