@@ -195,3 +195,25 @@ class Solution:
         return num1 - num2 
 
 '''--------------------------------------------------------------------------------------------'''
+
+# Question No : 2119. A Number After a Double Reversal
+
+#Method : 1
+class Solution:
+    def isSameAfterReversals(self, num: int) -> bool:
+        def reverse_integer(n):
+            return int(str(n)[::-1])
+
+        reversed1 = reverse_integer(num)
+        reversed2 = reverse_integer(reversed1)
+
+        return reversed2 == num
+
+#Method : 2
+class Solution:
+    def isSameAfterReversals(self, num: int) -> bool:
+         if len(str(num)) > 1 and str(num)[-1] =='0':
+             return False
+         return True
+
+'''--------------------------------------------------------------------------------------------'''
