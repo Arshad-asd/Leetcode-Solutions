@@ -440,3 +440,31 @@ class Solution:
 4.final return num1-num2
 
 <----------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+# Question No : 2119. A Number After a Double Reversal
+
+#Method : 1
+class Solution:
+    def isSameAfterReversals(self, num: int) -> bool:
+        def reverse_integer(n):
+            return int(str(n)[::-1])
+
+        reversed1 = reverse_integer(num)
+        reversed2 = reverse_integer(reversed1)
+
+        return reversed2 == num
+
+1.declare a funciton for rverse the given num and return num
+2.then create two reversed1 and reversed2 varilables for calling the reverse funtion two times
+3.return True or flase reversed2 == num 
+
+#Method : 2
+class Solution:
+    def isSameAfterReversals(self, num: int) -> bool:
+         if len(str(num)) > 1 and str(num)[-1] =='0':
+             return False
+         return True
+
+1.check condition length of the str(num) > 1 and the last nums values equal to '0'
+2.return false condition true else return True
+
+<----------------------------------------------------------------------------------------------------------------------------------------------------------------------->
