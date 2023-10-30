@@ -599,3 +599,52 @@ class Solution:
 
 
 <----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+#QUESTION NUMBER :  2500. Delete Greatest Value in Each Row 
+
+
+class Solution:
+    def deleteGreatestValue(self, grid: List[List[int]]) -> int:
+        res = 0  # Initialize the variable 'res' to store the result
+        n = len(grid[0])  # Get the number of columns in the grid (assuming all rows have the same length)
+        
+        # Iterate over each column
+        for i in range(n):
+            maxi = 0  # Initialize a variable 'maxi' to store the maximum value in the current column
+            
+            # Iterate over each row in the column
+            for j in grid:
+                new = max(j)  # Find the maximum value in the current row
+                maxi = max(maxi, new)  # Update 'maxi' to store the maximum value across all rows
+                j.remove(new)  # Remove the maximum value from the current row
+                
+            res += maxi  # Add the maximum value in the current column to the result 'res'
+            
+        return res  # Return the final result
+
+
+Explanation:
+
+1. **Initialization:**
+   - `res` is initialized to 0, which will be used to store the final result.
+   - `n` is set to the number of columns in the grid.
+
+2. **Iteration over Columns:**
+   - The outer loop (`for i in range(n)`) iterates over each column of the grid.
+
+3. **Finding Maximum Value:**
+   - `maxi` is initialized to 0 for each column to store the maximum value in that column.
+   - The inner loop (`for j in grid`) iterates over each row in the current column.
+   - `new` is assigned the maximum value in the current row using the `max` function.
+   - `maxi` is updated to store the maximum value across all rows.
+
+4. **Removing Maximum Value:**
+   - The maximum value (`new`) is removed from the current row to avoid selecting it again.
+
+5. **Accumulating Maximum Values:**
+   - The maximum value in the current column (`maxi`) is added to the result (`res`).
+
+6. **Final Result:**
+   - The function returns the final result (`res`).
+
+<----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
