@@ -335,3 +335,20 @@ class Solution:
         return generated
 
 '''--------------------------------------------------------------------------------------------'''
+#QUESTION NUMBER :  2500. Delete Greatest Value in Each Row 
+
+class Solution:
+    def deleteGreatestValue(self, grid: List[List[int]]) -> int:
+        res = 0
+        n = len(grid[0])
+        for i in range(n):
+            maxi = 0
+            for j in grid:
+                new = max(j)
+                maxi = max(maxi,new)
+                j.remove(new)
+            res += maxi
+        return res
+
+
+'''--------------------------------------------------------------------------------------------'''
