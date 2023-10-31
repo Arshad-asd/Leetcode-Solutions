@@ -352,3 +352,33 @@ class Solution:
 
 
 '''--------------------------------------------------------------------------------------------'''
+#QUESTION NUMBER : 1748. Sum of Unique Elements
+
+
+#Method 1
+
+class Solution:
+    def sumOfUnique(self, nums: List[int]) -> int:
+        sum = 0
+        for i in nums:
+            if nums.count(i)==1:
+                sum += i
+        return sum
+
+#Method 2
+
+class Solution:
+    def sumOfUnique(self, nums: List[int]) -> int:
+        sum = 0
+        for i in range(len(nums)):
+            flag = 0
+            for j in range(len(nums)):
+                if nums[i]==nums[j] and i !=j:
+                    flag =  1
+            if flag==0:
+                sum += nums[i]
+        return sum
+
+
+
+'''--------------------------------------------------------------------------------------------'''
