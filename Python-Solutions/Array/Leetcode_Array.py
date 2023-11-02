@@ -396,3 +396,12 @@ class Solution:
         return x
 
 '''--------------------------------------------------------------------------------------------'''
+#QUESTION NUMBER  : 2913. Subarrays Distinct Element Sum of Squares I
+class Solution:
+    def sumCounts(self, nums: List[int]) -> int:
+         res = []
+         for i in range(len(nums)):
+             for j in range(i,len(nums)+1):
+                 res.append(len(set(nums[i:j]))**2)
+         return sum(res)
+'''--------------------------------------------------------------------------------------------'''
