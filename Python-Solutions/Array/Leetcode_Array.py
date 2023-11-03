@@ -405,3 +405,16 @@ class Solution:
                  res.append(len(set(nums[i:j]))**2)
          return sum(res)
 '''--------------------------------------------------------------------------------------------'''
+#QUESTION NUMBER  : 2778. Sum of Squares of Special Elements
+
+class Solution:
+    def sumOfSquares(self, nums: List[int]) -> int:
+        sum = 0
+        n = len(nums)
+        for i in range(n):
+            if n % (i+1) == 0:
+                sum = sum + nums[i] **2
+        return sum
+
+
+'''--------------------------------------------------------------------------------------------'''
