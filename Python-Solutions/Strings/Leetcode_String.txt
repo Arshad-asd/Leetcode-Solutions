@@ -424,3 +424,23 @@ Suppose `s = "a1b2c3"`. The logic will execute as follows:
 So, `Solution().replaceDigits("a1b2c3")` will return `'abdf'`.
 
 <---------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+#QUESTION NUMBER  : 1812. Determine Color of a Chessboard Square
+
+   1. Define Letters on the Chessboard:
+        alpha is a list containing the letters 'a' to 'h', representing the columns on the chessboard.
+
+   2. Iterate Over Combinations:
+        Nested loops iterate over each letter and number combination on the chessboard.
+
+   3. Check Coordinates Match:
+        The code checks if the current combination matches the given coordinates.
+
+   4. Check Color of the Square:
+        If the combination matches, it checks if the sum of the letter index and number is even.
+        If the sum is even, it returns True, indicating that the square is white.
+
+   5. Return Result:
+        If no match is found in the loops, it returns False, indicating that the square is black.
+
+
+<---------------------------------------------------------------------------------------------------------------------------------------------------------------------->
