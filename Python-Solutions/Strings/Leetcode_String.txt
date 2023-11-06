@@ -444,3 +444,15 @@ So, `Solution().replaceDigits("a1b2c3")` will return `'abdf'`.
 
 
 <---------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+#QUESTION NUMBER  : 1374. Generate a String With Characters That Have Odd Counts
+
+    1. The function generateTheString takes an integer n as input and returns a string.
+
+    2.The conditional expression ("a" * n if n % 2 else "a" * (n-1) + "b") is used to determine the string to be returned based on whether n is even or odd.
+
+        If n is odd (n % 2 is True), it returns the string consisting of the character 'a' repeated n times ("a" * n).
+
+        If n is even (n % 2 is False), it returns the string consisting of the character 'a' repeated (n-1) times, followed by the character 'b' ("a" * (n-1) + "b").
+
+<---------------------------------------------------------------------------------------------------------------------------------------------------------------------->
