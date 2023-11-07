@@ -672,3 +672,10 @@ Explanation:
 
 
 <----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+#QUESTION NUMBER  : 1051. Height Checker
+
+
+1.intialize a expected list sorted of heights list, and also intialize the count variabele as 0
+2.single for loop used to iterate each expected and heights list the lenght of heights
+3.check the condition not equal to the expected postion of heghts then count increase 
+4.final return the count variable
