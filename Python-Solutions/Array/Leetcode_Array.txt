@@ -679,3 +679,14 @@ Explanation:
 2.single for loop used to iterate each expected and heights list the lenght of heights
 3.check the condition not equal to the expected postion of heghts then count increase 
 4.final return the count variable
+
+<----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+#QUESTION NUMBER  : 2089. Find Target Indices After Sorting Array
+1.sort nums list assending oreder
+2.intialize res list as empty
+3.for loop used to iterate each element in nums list the length of nums list
+4.check condition nums[i] == target condition is true then indices of nums[i] append to res list
+5.final return the res list
+
+<----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
