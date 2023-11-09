@@ -431,3 +431,14 @@ class Solution:
         return count
 
 '''--------------------------------------------------------------------------------------------'''
+#QUESTION NUMBER  : 2089. Find Target Indices After Sorting Array
+class Solution:
+    def targetIndices(self, nums: List[int], target: int) -> List[int]:
+         nums = sorted(nums)
+         res = []
+         for i in range(len(nums)):
+             if nums[i] == target:
+                res.append(i)
+         return res
+
+'''--------------------------------------------------------------------------------------------'''
