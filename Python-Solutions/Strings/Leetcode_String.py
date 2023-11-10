@@ -257,3 +257,18 @@ class Solution:
 
 
 '''--------------------------------------------------------------------------------------------------------------------------------------'''
+#QUESTION NUMBER  : 2000. Reverse Prefix of Word
+class Solution:
+    def reversePrefix(self, word: str, ch: str) -> str:
+        reverse = ""
+        if ch not in word:
+            return word
+        for i in range(len(word)):
+            if word[i] == ch:
+                reverse += word[0:i+1]
+                reverse = reverse[::-1]  
+                reverse += word[i+1:]
+                break
+        return reverse
+
+'''--------------------------------------------------------------------------------------------------------------------------------------'''
