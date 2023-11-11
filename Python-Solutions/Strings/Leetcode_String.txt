@@ -459,3 +459,88 @@ So, `Solution().replaceDigits("a1b2c3")` will return `'abdf'`.
 #QUESTION NUMBER  : 2000. Reverse Prefix of Word
 
 <---------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+#QUESTION NUMBER  :1941. Check if All Characters Have Equal Number of Occurrences
+
+Certainly! Let's break down each solution line by line.
+
+### Method 1:
+```python
+class Solution:
+    def areOccurrencesEqual(self, s: str) -> bool:
+        sets = set()
+        for i in range(len(s)):
+            count = 0  
+            for j in range(len(s)):
+                if s[i] == s[j]:
+                    count += 1
+            sets.add(count)
+
+        return True if len(sets) == 1 else False
+```
+
+1. `sets = set()`: Initializes an empty set to store the counts of characters.
+
+2. `for i in range(len(s)):`: Outer loop iterating through each character in the string `s`.
+
+3. `count = 0`: Initializes a counter for the current character.
+
+4. `for j in range(len(s)):`: Inner loop iterating through each character in the string to count occurrences.
+
+5. `if s[i] == s[j]:`: Checks if the current character in the outer loop matches the character in the inner loop.
+
+6. `count += 1`: Increments the count if a match is found.
+
+7. `sets.add(count)`: Adds the count to the set.
+
+8. `return True if len(sets) == 1 else False`: Checks if there is only one unique count in the set. Returns `True` if all character occurrences are equal, otherwise `False`.
+
+### Method 2:
+```python
+class Solution:
+    def areOccurrencesEqual(self, s: str) -> bool:
+        lst=[]
+        for i in s:
+            c=s.count(i)
+            lst.append(c)
+        if min(lst)==max(lst):
+            return True
+        else:
+            return False
+```
+
+1. `lst=[]`: Initializes an empty list to store the counts of characters.
+
+2. `for i in s:`: Iterates through each character in the string `s`.
+
+3. `c=s.count(i)`: Counts the occurrences of the current character in the string.
+
+4. `lst.append(c)`: Appends the count to the list.
+
+5. `if min(lst)==max(lst):`: Checks if the minimum and maximum counts in the list are equal.
+
+6. `return True`: Returns `True` if all character occurrences are equal.
+
+7. `else: return False`: Returns `False` if the counts are not equal.
+
+### Method 3:
+```python
+class Solution:
+    def areOccurrencesEqual(self, s: str) -> bool:
+        char_count = {}
+        for char in s:
+            char_count[char] = char_count.get(char, 0) + 1
+
+        return len(set(char_count.values())) == 1
+```
+
+1. `char_count = {}`: Initializes an empty dictionary to store the counts of characters.
+
+2. `for char in s:`: Iterates through each character in the string `s`.
+
+3. `char_count[char] = char_count.get(char, 0) + 1`: Updates the count of the current character in the dictionary.
+
+4. `return len(set(char_count.values())) == 1`: Checks if there is only one unique count in the dictionary values using a set. Returns `True` if all character occurrences are equal, otherwise `False`.
+
+In summary, Method 3 is the most efficient and concise, avoiding redundant counting and nested loops.
+
+<---------------------------------------------------------------------------------------------------------------------------------------------------------------------->
