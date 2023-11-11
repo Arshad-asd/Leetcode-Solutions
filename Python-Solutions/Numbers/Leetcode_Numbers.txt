@@ -468,3 +468,8 @@ class Solution:
 2.return false condition true else return True
 
 <----------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+# Question No : 2427. Number of Common Factors
+1.first check condition a > b or b > a ,if a > b assigan n = a or n =base
+2.the n range used to iterate for loop 
+3.each iteration check condition a % i and b % i == 0 then count will be increase
+4.finaly return the count
