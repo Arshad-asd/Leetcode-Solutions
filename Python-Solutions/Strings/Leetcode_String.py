@@ -272,3 +272,40 @@ class Solution:
         return reverse
 
 '''--------------------------------------------------------------------------------------------------------------------------------------'''
+#QUESTION NUMBER  :1941. Check if All Characters Have Equal Number of Occurrences
+
+#Method 1
+class Solution:
+    def areOccurrencesEqual(self, s: str) -> bool:
+        sets = set()
+        for i in range(len(s)):
+            count = 0  
+            for j in range(len(s)):
+                if s[i] == s[j]:
+                    count += 1
+            sets.add(count)
+
+        return True if len(sets) == 1 else False
+
+#Mehtod 2
+class Solution:
+    def areOccurrencesEqual(self, s: str) -> bool:
+        lst=[]
+        for i in s:
+            c=s.count(i)
+            lst.append(c)
+        if min(lst)==max(lst):
+            return True
+        else:
+            return False
+
+#Method 3
+class Solution:
+    def areOccurrencesEqual(self, s: str) -> bool:
+        char_count = {}
+        for char in s:
+            char_count[char] = char_count.get(char, 0) + 1
+
+        return len(set(char_count.values())) == 1
+
+'''--------------------------------------------------------------------------------------------------------------------------------------'''
