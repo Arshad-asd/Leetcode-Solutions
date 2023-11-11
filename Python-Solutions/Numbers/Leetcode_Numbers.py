@@ -217,3 +217,16 @@ class Solution:
          return True
 
 '''--------------------------------------------------------------------------------------------'''
+# Question No : 2427. Number of Common Factors
+class Solution:
+    def commonFactors(self, a: int, b: int) -> int:
+        if a > b:
+            n = a
+        else:
+            n = b
+        count = 0
+        for i in range(1,n+1):
+            if a % i == 0 and b % i == 0:
+                count += 1
+        return count
+'''--------------------------------------------------------------------------------------------'''
