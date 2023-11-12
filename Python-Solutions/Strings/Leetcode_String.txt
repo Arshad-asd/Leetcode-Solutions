@@ -544,3 +544,54 @@ class Solution:
 In summary, Method 3 is the most efficient and concise, avoiding redundant counting and nested loops.
 
 <---------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+#QUESTION NUMBER  : 1309. Decrypt String from Alphabet to Integer Mapping
+
+### Method 1:
+```python
+class Solution:
+    def freqAlphabets(self, s: str) -> str:
+        for i in range(26, 0, -1):
+            s = s.replace(str(i) + "#", chr(ord("a") + i - 1)) if i > 9 else s.replace(str(i), chr(ord("a") + i - 1))
+        return s
+```
+
+1. `for i in range(26, 0, -1):`: Iterates in reverse order from 26 to 1. This loop is used to replace each occurrence of a number or a number followed by '#' with the corresponding letter.
+
+2. `s = s.replace(str(i) + "#", chr(ord("a") + i - 1)) if i > 9 else s.replace(str(i), chr(ord("a") + i - 1))`: Uses the `replace` method to substitute occurrences of the current number (or number followed by '#') with the corresponding letter. If the number is greater than 9, it appends '#' to it. The `if i > 9 else` part handles the case where the number is less than or equal to 9.
+
+3. `return s`: Returns the modified string after replacing all occurrences.
+
+### Method 2:
+```python
+class Solution:
+    def freqAlphabets(self, s: str) -> str:
+        ans = ""
+        i = len(s) - 1
+        while i >= 0:
+            if s[i] == "#":
+                ans = ans + chr(int(s[i - 2:i]) + 96)
+                i = i - 2
+            else:
+                ans = ans + chr(int(s[i]) + 96)
+            i -= 1
+        return ans[::-1]
+```
+
+1. `ans = ""`: Initializes an empty string to store the result.
+
+2. `i = len(s) - 1`: Initializes the index `i` to the last character of the input string `s`.
+
+3. `while i >= 0:`: Initiates a loop that iterates through the string from right to left.
+
+4. `if s[i] == "#":`: Checks if the current character is '#'.
+
+5. `ans = ans + chr(int(s[i - 2:i]) + 96)`: Converts the substring (two characters before '#') to an integer, adds 96 to get the ASCII value of the corresponding letter, and appends the letter to the result string `ans`. The index `i` is then decremented by 2 to skip the processed characters.
+
+6. `else: ans = ans + chr(int(s[i]) + 96)`: Converts the current character to an integer, adds 96 to get the ASCII value of the corresponding letter, and appends the letter to the result string `ans`.
+
+7. `i -= 1`: Decrements the index `i` for the next iteration.
+
+8. `return ans[::-1]`: Returns the reversed string `ans` since we processed the input string from right to left.
+
+Both methods essentially perform the same task, converting encoded numbers to their corresponding letters, but they use different approaches to achieve this. Method 2 uses a while loop and directly processes each character, while Method 1 uses a for loop and the `replace` method to replace occurrences in a reverse order.
