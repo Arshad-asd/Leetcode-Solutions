@@ -309,3 +309,26 @@ class Solution:
         return len(set(char_count.values())) == 1
 
 '''--------------------------------------------------------------------------------------------------------------------------------------'''
+#QUESTION NUMBER  : 1309. Decrypt String from Alphabet to Integer Mapping
+
+#Method 1
+class Solution:
+    def freqAlphabets(self, s: str) -> str:
+        for i in range(26,0,-1):
+            s = s.replace(str(i)+"#", chr(ord("a")+i-1)) if i>9 else s.replace(str(i), chr(ord("a")+i-1))
+        return s
+
+#Method 2
+class Solution:
+    def freqAlphabets(self, s: str) -> str:
+        ans = ""
+        i = len(s)-1
+        while i>=0:
+            if s[i]=="#":
+                ans = ans + chr(int(s[i-2:i])+96)
+                i=i-2
+            else:
+                ans = ans + chr(int(s[i])+96)
+            i -= 1
+        return ans[::-1]
+        
