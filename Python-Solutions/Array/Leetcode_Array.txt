@@ -690,3 +690,34 @@ Explanation:
 5.final return the res list
 
 <----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+
+#QUESTION NUMBER  : 1450. Number of Students Doing Homework at a Given Time
+
+```python
+class Solution:
+    def busyStudent(self, startTime: List[int], endTime: List[int], queryTime: int) -> int:
+        count = 0
+        for i in range(len(startTime)):
+            if endTime[i] >= queryTime and startTime[i] <= queryTime:
+                count += 1
+        return count
+```
+
+1. `class Solution:`: Defines a class named `Solution`. This is a common structure for defining a solution to a problem in LeetCode.
+
+2. `def busyStudent(self, startTime: List[int], endTime: List[int], queryTime: int) -> int:`: Defines a method `busyStudent` within the class. This method takes three parameters: `startTime`, `endTime`, and `queryTime`. All three parameters are lists of integers (`List[int]`), and the method returns an integer (`-> int`).
+
+3. `count = 0`: Initializes a variable `count` to zero. This variable will be used to count the number of students who are busy during the specified `queryTime`.
+
+4. `for i in range(len(startTime)):`: Initiates a `for` loop that iterates through the indices of the `startTime` list. This loop is used to iterate through each student's start and end times.
+
+5. `if endTime[i] >= queryTime and startTime[i] <= queryTime:`: Checks if the `queryTime` falls within the time range of the current student. If the end time of the student is greater than or equal to `queryTime` and the start time is less than or equal to `queryTime`, then the student is considered busy during the specified time.
+
+6. `count += 1`: Increments the `count` variable by 1 if the current student is busy during the specified time.
+
+7. `return count`: Returns the final count, representing the number of students who are busy during the specified `queryTime`.
+
+In summary, the `busyStudent` method iterates through the given lists of start and end times for students and counts how many students are busy during a specific `queryTime`. The count is then returned as the result.
+
+<----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
