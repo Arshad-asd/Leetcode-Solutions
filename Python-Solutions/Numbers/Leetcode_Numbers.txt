@@ -473,3 +473,12 @@ class Solution:
 2.the n range used to iterate for loop 
 3.each iteration check condition a % i and b % i == 0 then count will be increase
 4.finaly return the count
+
+
+<----------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+# Question No : 2169. Count Operations to Obtain Zero
+
+1.The loop condition now checks if both num1 and num2 are greater than 0. The loop should continue as long as both numbers are not equal to 0.
+
+2.Inside the loop, the code now directly subtracts the smaller number from the larger number, without checking if num1 is less than num2 or equal to num2.
+3.each iteration increment coutn by 1
