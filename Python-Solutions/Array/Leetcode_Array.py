@@ -450,3 +450,36 @@ class Solution:
               if endTime[i] >= queryTime and startTime[i] <= queryTime:
                   count += 1
           return count
+
+#QUESTION NUMBER  : 2357. Make Array Zero by Subtracting Equal Amounts
+
+class Solution:
+    def minimumOperations(self, nums: List[int]) -> int:
+        uniq_non_zero = set()
+        for num in nums:
+            if num == 0:
+                continue
+            uniq_non_zero.add(num)
+        return len(uniq_non_zero)
+
+
+class Solution:
+    def minimumOperations(self, nums: List[int]) -> int:
+        count_operations = 0
+
+        while any(num != 0 for num in nums):
+            smallest_non_zero = float('inf')
+
+            # Find the smallest non-zero element
+            for num in nums:
+                if num != 0 and num < smallest_non_zero:
+                    smallest_non_zero = num
+
+            # Subtract the smallest non-zero element from each non-zero element in the list
+            for i in range(len(nums)):
+                if nums[i] != 0:
+                    nums[i] -= smallest_non_zero
+
+            count_operations += 1
+
+        return count_operations
