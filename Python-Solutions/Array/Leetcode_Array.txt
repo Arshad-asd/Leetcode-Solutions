@@ -721,3 +721,4 @@ class Solution:
 In summary, the `busyStudent` method iterates through the given lists of start and end times for students and counts how many students are busy during a specific `queryTime`. The count is then returned as the result.
 
 <----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+#QUESTION NUMBER  : 2357. Make Array Zero by Subtracting Equal Amounts
