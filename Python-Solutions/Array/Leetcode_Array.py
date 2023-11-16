@@ -451,6 +451,7 @@ class Solution:
                   count += 1
           return count
 
+'''--------------------------------------------------------------------------------------------'''
 #QUESTION NUMBER  : 2357. Make Array Zero by Subtracting Equal Amounts
 
 class Solution:
@@ -483,3 +484,12 @@ class Solution:
             count_operations += 1
 
         return count_operations
+
+'''--------------------------------------------------------------------------------------------'''
+
+#QUESTION NUMBER  : 2154. Keep Multiplying Found Values by Two
+class Solution:
+    def findFinalValue(self, nums: List[int], original: int) -> int:
+        while original in nums:
+            original *= 2
+        return original
