@@ -493,3 +493,28 @@ class Solution:
         while original in nums:
             original *= 2
         return original
+
+'''--------------------------------------------------------------------------------------------'''
+
+#QUESTION NUMBER  : 2529. Maximum Count of Positive Integer and Negative Integer
+
+#Method 1
+class Solution:
+    def maximumCount(self, nums: List[int]) -> int:
+        max_count = 0
+        min_count = 0
+        for i in range(len(nums)):
+            if nums[i] != 0:
+                if nums[i] > 0:
+                    min_count += 1
+                else:
+                    max_count += 1
+        return max_count if max_count >= min_count else min_count
+
+#Method 2
+class Solution:
+    def maximumCount(self, nums: List[int]) -> int:
+        l1 = list(filter(lambda x: x>0, nums))
+        l2 = list(filter(lambda x: x<0, nums))
+        return max(len(l1),len(l2))
+'''--------------------------------------------------------------------------------------------'''
