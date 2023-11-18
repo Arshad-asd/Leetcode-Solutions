@@ -518,3 +518,14 @@ class Solution:
         l2 = list(filter(lambda x: x<0, nums))
         return max(len(l1),len(l2))
 '''--------------------------------------------------------------------------------------------'''
+#QUESTION NUMBER  : 2124. Check if All A's Appears Before All B's
+class Solution:
+    def checkString(self, s: str) -> bool:
+        for i in range(len(s)):
+            if s[i] == 'b':
+                if 'a' in s[i+1:]:
+                    return False
+                return True
+            elif 'b' not in s:
+                return True
+'''--------------------------------------------------------------------------------------------'''
