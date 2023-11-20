@@ -242,3 +242,10 @@ class Solution:
             count += 1
         return count
 '''--------------------------------------------------------------------------------------------'''
+# Question No : 2396. Strictly Palindromic Number
+class Solution:
+    def isStrictlyPalindromic(self, n: int) -> bool:
+        b = bin(n)
+        if b == b[::-1]:
+           return True
+        return False
