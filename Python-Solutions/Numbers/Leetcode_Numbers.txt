@@ -482,3 +482,21 @@ class Solution:
 
 2.Inside the loop, the code now directly subtracts the smaller number from the larger number, without checking if num1 is less than num2 or equal to num2.
 3.each iteration increment coutn by 1
+
+
+<----------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+# Question No : 2396. Strictly Palindromic Number
+
+1.class Solution:: Defines a class named Solution. This is a common structure for defining a solution to a problem in Python.
+
+2.def isStrictlyPalindromic(self, n: int) -> bool:: Defines a method isStrictlyPalindromic within the class. This method takes an integer n as input and returns a boolean (-> bool), indicating whether n is strictly palindromic.
+
+3.b = bin(n): Converts the integer n to its binary representation using the bin() function. The result is a string b that starts with the prefix '0b', followed by the binary representation of the integer.
+
+4.if b == b[::-1]:: Checks if the binary representation b is equal to its reverse (b[::-1]). This is a common way to check if a string is palindromic because b[::-1] reverses the string, and the comparison checks if it's the same as the original string.
+
+5.return True: If the binary representation is equal to its reverse, the method returns True, indicating that the integer n is strictly palindromic in binary representation.
+
+6.return False: If the binary representation is not equal to its reverse, the method returns False, indicating that the integer n is not strictly palindromic in binary representation.
+
+<----------------------------------------------------------------------------------------------------------------------------------------------------------------------->
