@@ -529,3 +529,17 @@ class Solution:
             elif 'b' not in s:
                 return True
 '''--------------------------------------------------------------------------------------------'''
+#QUESTION NUMBER  :1827. Minimum Operations to Make the Array Increasing
+class Solution:
+    def minOperations(self, nums: List[int]) -> int:
+        if len(nums)<=1:
+            return 0
+        count = 0
+        for i in range(1,len(nums)):
+            if nums[i] <= nums[i-1]:
+                temp = nums[i]
+                nums[i] += (nums[i-1] - nums[i]) + 1
+                count += nums [i] - temp
+        return count
+
+'''--------------------------------------------------------------------------------------------'''
