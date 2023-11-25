@@ -543,3 +543,15 @@ class Solution:
         return count
 
 '''--------------------------------------------------------------------------------------------'''
+#QUESTION NUMBER  : 2176. Count Equal and Divisible Pairs in an Array
+class Solution:
+    def countPairs(self, nums: List[int], k: int) -> int:
+        count = 0
+        res = []
+        for i in range(len(nums)):
+            for j in range(i+1,len(nums)):
+                if nums[i] == nums[j] and (i * j) % k == 0:
+                    res.append([i,j])
+        return len(res)
+
+'''--------------------------------------------------------------------------------------------'''
