@@ -783,3 +783,61 @@ The count is updated by adding the difference between the modified current eleme
     return count
 ```
 Finally, the method returns the total count, which represents the minimum number of operations required to make the entire list strictly increasing.
+<----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+#QUESTION NUMBER  : 2176. Count Equal and Divisible Pairs in an Array
+
+
+```python
+class Solution:
+    def countPairs(self, nums: List[int], k: int) -> int:
+```
+
+This line defines a class named `Solution` with a method `countPairs`. The method takes two parameters: a list of integers `nums` and an integer `k`. The method is expected to return an integer.
+
+```python
+        count = 0
+```
+
+This initializes a variable `count` to 0. This variable will be used to keep track of the count of pairs that satisfy certain conditions.
+
+```python
+        res = []
+```
+
+This initializes an empty list `res`. This list will be used to store pairs `[i, j]` that satisfy the conditions specified in the following loop.
+
+```python
+        for i in range(len(nums)):
+```
+
+This starts a loop that iterates over the indices of elements in the `nums` list, using the variable `i` as the loop index.
+
+```python
+            for j in range(i+1, len(nums)):
+```
+
+This starts another loop nested inside the first one, iterating over the indices of elements in the `nums` list, starting from `i + 1`. This ensures that `j` is always greater than `i` to avoid counting the same pair more than once.
+
+```python
+                if nums[i] == nums[j] and (i * j) % k == 0:
+```
+
+This condition checks if the elements at indices `i` and `j` in the `nums` list are equal (`nums[i] == nums[j]`) and if the product of `i` and `j` is divisible by `k` with no remainder (`(i * j) % k == 0`).
+
+```python
+                    res.append([i, j])
+```
+
+If the condition is true, a pair `[i, j]` is appended to the `res` list.
+
+```python
+        return len(res)
+```
+
+Finally, the method returns the length of the `res` list, which represents the count of pairs that satisfy the specified conditions.
+
+In summary, the `countPairs` method iterates over all pairs of indices in the `nums` list, checks certain conditions for each pair, and counts the number of pairs that meet those conditions. The count is then returned as the result.
+
+
+<----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
