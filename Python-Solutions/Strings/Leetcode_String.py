@@ -50,6 +50,7 @@ class Solution:
 from datetime import datetime
 import calendar
 from itertools import accumulate
+import math
 class Solution:
     def dayOfTheWeek(self, day: int, month: int, year: int) -> str:
         date = ""
@@ -331,4 +332,14 @@ class Solution:
                 ans = ans + chr(int(s[i])+96)
             i -= 1
         return ans[::-1]
-        
+'''--------------------------------------------------------------------------------------------------------------------------------------'''
+
+#QUESTION NUMBER  : 2278. Percentage of Letter in String
+
+class Solution:
+    def percentageLetter(self, s: str, letter: str) -> int:
+        count = s.count(letter)
+        percentage = (count / len(s)) * 100
+        return math.floor(percentage)
+
+'''--------------------------------------------------------------------------------------------------------------------------------------'''
