@@ -595,3 +595,40 @@ class Solution:
 8. `return ans[::-1]`: Returns the reversed string `ans` since we processed the input string from right to left.
 
 Both methods essentially perform the same task, converting encoded numbers to their corresponding letters, but they use different approaches to achieve this. Method 2 uses a while loop and directly processes each character, while Method 1 uses a for loop and the `replace` method to replace occurrences in a reverse order.
+
+
+Certainly! Let's go through the code line by line:
+
+```python
+class Solution:
+    def percentageLetter(self, s: str, letter: str) -> int:
+```
+
+<---------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+#QUESTION NUMBER  : 2278. Percentage of Letter in String
+
+1. `class Solution:`: This defines a Python class named `Solution`.
+
+2. `def percentageLetter(self, s: str, letter: str) -> int:`: This defines a method named `percentageLetter` within the class `Solution`. It takes two parameters, `s` (a string) and `letter` (a string), and it indicates that the method will return an integer.
+
+```python
+        count = s.count(letter)
+```
+
+3. `count = s.count(letter)`: This line calculates the number of occurrences of the specified `letter` in the string `s` using the `count` method of strings. It stores the count in the variable `count`.
+
+```python
+        percentage = (count / len(s)) * 100
+```
+
+4. `percentage = (count / len(s)) * 100`: This line calculates the percentage of occurrences of the specified `letter` in the string `s`. It divides the count of the letter by the length of the string `s` and then multiplies by 100 to get the percentage. The result is stored in the variable `percentage`.
+
+```python
+        return math.floor(percentage)
+```
+
+5. `return math.floor(percentage)`: This line returns the percentage as an integer, rounded down using `math.floor()`. The reason for rounding down is to get a whole number percentage without rounding up, ensuring that the result is always an integer.
+
+In summary, the `percentageLetter` method calculates the percentage of occurrences of a specified letter in a given string and returns this percentage as an integer. It uses the count of the letter and the length of the string for the calculation, rounding down the result to ensure it's an integer.
+<---------------------------------------------------------------------------------------------------------------------------------------------------------------------->
