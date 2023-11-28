@@ -632,3 +632,4 @@ class Solution:
 
 In summary, the `percentageLetter` method calculates the percentage of occurrences of a specified letter in a given string and returns this percentage as an integer. It uses the count of the letter and the length of the string for the calculation, rounding down the result to ensure it's an integer.
 <---------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+#QUESTION NUMBER  : 2351. First Letter to Appear Twice
