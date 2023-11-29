@@ -555,3 +555,21 @@ class Solution:
         return len(res)
 
 '''--------------------------------------------------------------------------------------------'''
+#QUESTION NUMBER  : 2942. Find Words Containing Character
+
+#Method 1
+class Solution:
+    def findWordsContaining(self, words: List[str], x: str) -> List[int]:
+        res = []
+        for i in range(len(words)):
+            for j in words[i]:
+                 if j == x:
+                     res.append(i)
+        return set(res)
+
+#Metod 2
+class Solution:
+    def findWordsContaining(self, words: List[str], x: str) -> List[int]:
+        return [i for i, word in enumerate(words) if x in word]
+
+'''--------------------------------------------------------------------------------------------'''
