@@ -500,3 +500,9 @@ class Solution:
 6.return False: If the binary representation is not equal to its reverse, the method returns False, indicating that the integer n is not strictly palindromic in binary representation.
 
 <----------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+# Question No : 2220. Minimum Bit Flips to Convert Number
+
+
+
+<----------------------------------------------------------------------------------------------------------------------------------------------------------------------->
