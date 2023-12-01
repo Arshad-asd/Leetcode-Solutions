@@ -249,3 +249,30 @@ class Solution:
         if b == b[::-1]:
            return True
         return False
+
+'''--------------------------------------------------------------------------------------------'''
+
+# Question No : 2220. Minimum Bit Flips to Convert Number
+
+class Solution:
+    def minBitFlips(self, start: int, goal: int) -> int:
+        start_bin = bin(start)[2:]
+        goal_bin = bin(goal)[2:]
+        flips = 0
+
+        len_diff = abs(len(start_bin) - len(goal_bin))
+
+        if len(start_bin) < len(goal_bin):
+            start_bin = '0' * len_diff + start_bin
+        else:
+            goal_bin = '0' * len_diff + goal_bin
+
+        for i in range(len(start_bin)):
+            if start_bin[i] != goal_bin[i]:
+                flips += 1
+                start_bin = start_bin[:i] + goal_bin[i] + start_bin[i + 1:]
+
+        return flips
+
+
+'''--------------------------------------------------------------------------------------------'''
