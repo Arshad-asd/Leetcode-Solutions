@@ -47,6 +47,7 @@ class Solution:
 
 #QUESTION NUMBER : 1185. Day of the Week
 
+from collections import Counter
 from datetime import datetime
 import calendar
 from itertools import accumulate
@@ -353,5 +354,42 @@ class Solution:
             else:
                 res += s[i]
         return res
+
+'''--------------------------------------------------------------------------------------------------------------------------------------'''
+#QUESTION NUMBER  : 1684. Count the Number of Consistent Strings
+
+#Method 1
+class Solution:
+    def countConsistentStrings(self, allowed: str, words: List[str]) -> int:
+        count = 0
+        for word in words:
+            if all(char in allowed for char in word):
+                count += 1
+        return count
+
+#Method 2
+class Solution:
+    def countConsistentStrings(self, allowed: str, words: List[str]) -> int:
+        res = 0
+        allow = Counter(allowed)
+        for word in words:
+            flag = 1
+            for letter in word:
+                if letter not in allow:
+                    flag = 0
+                else:
+                    continue
+            if flag:
+                res += 1
+        return res
+'''--------------------------------------------------------------------------------------------------------------------------------------'''
+#QUESTION NUMBER  : 2108. Find First Palindromic String in the Array
+class Solution:
+    def firstPalindrome(self, words: List[str]) -> str:
+        for i in range(len(words)):
+            current_word = words[i]
+            if current_word == current_word[::-1]:
+                return current_word
+        return ""
 
 '''--------------------------------------------------------------------------------------------------------------------------------------'''
