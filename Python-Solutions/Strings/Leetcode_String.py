@@ -393,3 +393,13 @@ class Solution:
         return ""
 
 '''--------------------------------------------------------------------------------------------------------------------------------------'''
+#QUESTION NUMBER  : 2185. Counting Words With a Given Prefix
+
+class Solution:
+    def prefixCount(self, words: List[str], pref: str) -> int:
+        count = 0
+        for i in range(len(words)):
+            current_word = words[i]
+            if current_word[:len(pref)] == pref:
+                count += 1
+        return count
