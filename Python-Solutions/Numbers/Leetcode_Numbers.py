@@ -276,3 +276,19 @@ class Solution:
 
 
 '''--------------------------------------------------------------------------------------------'''
+# Question No : 2562. Find the Array Concatenation Value
+class Solution:
+    def findTheArrayConcVal(self, nums: List[int]) -> int:
+        res = 0
+
+        while nums:
+            concat = str(nums.pop(0))
+
+            if nums:
+                concat += str(nums.pop())
+
+            res += int(concat)
+
+        return res
+
+'''--------------------------------------------------------------------------------------------'''
