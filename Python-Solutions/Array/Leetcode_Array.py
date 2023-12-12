@@ -573,3 +573,17 @@ class Solution:
         return [i for i, word in enumerate(words) if x in word]
 
 '''--------------------------------------------------------------------------------------------'''
+#QUESTION NUMBER  : 2578. Split With Minimum Sum
+class Solution:
+    def splitNum(self, num: int) -> int:
+        split = sorted([int(i) for i in str(num)])
+        num1 = ''
+        num2 = ''
+        for ind, val in enumerate(split):
+            if ind%2 == 0:
+                num1 += str(val)
+            else:
+                num2 += str(val)
+        return int(num1)+int(num2)
+
+'''--------------------------------------------------------------------------------------------'''
