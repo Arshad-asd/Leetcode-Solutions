@@ -292,3 +292,13 @@ class Solution:
         return res
 
 '''--------------------------------------------------------------------------------------------'''
+#QUESTION NUMBER  : 2042. Check if Numbers Are Ascending in a Sentence
+class Solution:
+    def areNumbersAscending(self, s: str) -> bool:
+        numbers = [int(match.group()) for match in re.finditer(r'\b\d+\b', s)]
+
+        for i in range(len(numbers)-1):
+            if numbers[i] >= numbers[i+1]:
+                return False
+
+        return True
