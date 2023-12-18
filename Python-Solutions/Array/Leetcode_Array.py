@@ -596,4 +596,18 @@ class Solution:
                if nums[i] == nums[j] and i < j:
                    count += 1
         return count
-        
+'''--------------------------------------------------------------------------------------------'''
+
+#QUESTION NUMBER  : 1470. Shuffle the Array
+class Solution:
+    def shuffle(self, nums: List[int], n: int) -> List[int]:
+        res = []
+        for i in range(n):
+            x,y = i,n+i
+            if x != n:
+                res.append(nums[x])
+                res.append(nums[y])
+        return res
+
+'''--------------------------------------------------------------------------------------------'''
+
