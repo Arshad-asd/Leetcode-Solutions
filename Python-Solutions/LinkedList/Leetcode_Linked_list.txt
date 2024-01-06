@@ -176,3 +176,4 @@ The Solution class contains a method named checkTree, which takes a TreeNode cal
 4.If the values are not equal, it returns False, indicating that the condition does not hold for the current node.
 
 <---------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+# QUESTION NO: 2236. Root Equals Sum of Children
