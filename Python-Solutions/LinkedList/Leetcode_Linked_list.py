@@ -153,4 +153,72 @@ class Solution:
             else:
                 current = current.next
         return head
-                
+'''--------------------------------------------------------------------------------------------'''
+# QUESTION NO: 148. Sort List
+#METHOD 1: Merge sort used O(n log n)
+class Solution:
+    def sortList(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        if not head or not head.next:
+            return head
+
+        # Find the middle of the linked list
+        middle = self.find_middle(head)
+
+        # Split the linked list into two halves
+        left_half = head
+        right_half = middle.next
+        middle.next = None
+
+        # Recursively sort both halves
+        left_sorted = self.sortList(left_half)
+        right_sorted = self.sortList(right_half)
+
+        # Merge the sorted halves
+        return self.merge(left_sorted, right_sorted)
+
+    def find_middle(self, head: ListNode) -> ListNode:
+        slow = head
+        fast = head.next
+
+        while fast and fast.next:
+            slow = slow.next
+            fast = fast.next.next
+
+        return slow
+
+    def merge(self, left: ListNode, right: ListNode) -> ListNode:
+        dummy = ListNode()
+        current = dummy
+
+        while left and right:
+            if left.val < right.val:
+                current.next = left
+                left = left.next
+            else:
+                current.next = right
+                right = right.next
+
+            current = current.next
+
+        # Attach the remaining nodes from either left or right
+        current.next = left or right
+
+        return dummy.next
+
+#METHOD 2: buble sort: O(n) not use full for large data set
+class Solution:
+    def sortList(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        
+        first = head
+        while first:
+            current = head
+            while current and current.next :
+                if current.val >= current.next.val:
+                    temp = current.next.val
+                    current.next.val = current.val
+                    current.val = temp
+                    current = current.next
+                else:
+                    current = current.next
+            first = first.next
+        return head
