@@ -213,6 +213,7 @@ class Solution:
 
 '''--------------------------------------------------------------------------------------------------------------------------------------'''
 #QUESTION NUMBER : 1859. Sorting the Sentence
+#STEP 1: 
 class Solution:
     def sortSentence(self, s: str) -> str:
         words = s.split()
@@ -224,6 +225,21 @@ class Solution:
         result = ' '.join(words_without_numbers)
 
         return result
+#STEP 2:
+class Solution:
+    def sortSentence(self,s: str) -> str:
+        arr = s.split()
+        print(arr[0][-1])
+        result = ''
+        for i in range(len(arr)):
+            for j in range(len(arr)-i-1):
+                if arr[j][-1] > arr[j+1][-1]:
+                    arr[j],arr[j+1] = arr[j+1],arr[j]
+        for i in range(len(arr)):
+            result += arr[i][:-1]
+            if i != len(arr)-1:
+                result +=" "
+        return result 
 '''--------------------------------------------------------------------------------------------------------------------------------------'''
 #QUESTION NUMBER : 1844. Replace All Digits with Characters
 class Solution:
