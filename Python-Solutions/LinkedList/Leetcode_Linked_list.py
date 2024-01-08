@@ -222,3 +222,13 @@ class Solution:
                     current = current.next
             first = first.next
         return head
+
+# QUESTION NO: 1290. Convert Binary Number in a Linked List to Integer
+class Solution:
+    def getDecimalValue(self, head: ListNode) -> int:
+        current = head
+        result = 0
+        while current:
+            result = result * 2 + current.val
+            current = current.next
+        return result
