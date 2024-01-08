@@ -222,7 +222,7 @@ class Solution:
                     current = current.next
             first = first.next
         return head
-
+'''--------------------------------------------------------------------------------------------'''
 # QUESTION NO: 1290. Convert Binary Number in a Linked List to Integer
 class Solution:
     def getDecimalValue(self, head: ListNode) -> int:
@@ -232,3 +232,31 @@ class Solution:
             result = result * 2 + current.val
             current = current.next
         return result
+'''--------------------------------------------------------------------------------------------'''
+
+# QUESTION NO:19. Remove Nth Node From End of List
+
+class Solution:
+    def find_len(self,head):
+        count = 0
+        current = head
+        while current:
+            count += 1
+            current = current.next
+        return count
+    def removeNthFromEnd(self, head: Optional[ListNode], n: int) -> Optional[ListNode]:
+         index = 0
+         length = self.find_len(head)
+         current = head 
+         while current and index < length-n:
+             prev = current 
+             current = current.next
+             index += 1
+         if current is None:
+             return head
+         elif index == 0:
+             head = head.next
+         else:
+             prev.next = current.next
+         return head
+'''--------------------------------------------------------------------------------------------'''
