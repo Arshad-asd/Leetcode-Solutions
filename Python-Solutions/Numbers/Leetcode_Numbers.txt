@@ -512,4 +512,5 @@ class Solution:
 #QUESTION NUMBER  : 2042. Check if Numbers Are Ascending in a Sentence
 
 <----------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+#QUESTION NUMBER  : 202. Happy Number
 
