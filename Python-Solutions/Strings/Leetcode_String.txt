@@ -657,3 +657,4 @@ In summary, the `percentageLetter` method calculates the percentage of occurrenc
 #QUESTION NUMBER : 1768. Merge Strings Alternately
 
 <---------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+#QUESTION NUMBER : 1967. Number of Strings That Appear as Substrings in Word
