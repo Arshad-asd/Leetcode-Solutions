@@ -658,3 +658,7 @@ In summary, the `percentageLetter` method calculates the percentage of occurrenc
 
 <---------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 #QUESTION NUMBER : 1967. Number of Strings That Appear as Substrings in Word
+
+<---------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+#QUESTION NUMBER : 1796. Second Largest Digit in a String
