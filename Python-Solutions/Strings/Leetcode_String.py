@@ -451,3 +451,12 @@ class Solution:
                 count += 1
         return count
 '''--------------------------------------------------------------------------------------------------------------------------------------'''
+#QUESTION NUMBER : 1796. Second Largest Digit in a String
+class Solution:
+    def secondHighest(self, s: str) -> int:
+        digits = sorted(set(int(digit) for digit in s if digit.isdigit()), reverse=True)
+        
+        if len(digits) < 2:
+            return -1
+        
+        return digits[1]
