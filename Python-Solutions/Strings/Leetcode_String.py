@@ -460,3 +460,16 @@ class Solution:
             return -1
         
         return digits[1]
+'''--------------------------------------------------------------------------------------------------------------------------------------'''
+
+#QUESTION NUMBER : 557. Reverse Words in a String III
+class Solution:
+    def reverseWords(self,s: str) -> str:
+        arr = s.split()
+        result = ''
+        for i in range(len(arr)):
+            temp = arr[i][::-1]
+            result += temp
+            if len(arr)-1 != i:
+               result += " "
+        return result
