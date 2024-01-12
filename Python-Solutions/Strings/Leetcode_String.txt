@@ -664,3 +664,6 @@ In summary, the `percentageLetter` method calculates the percentage of occurrenc
 #QUESTION NUMBER : 1796. Second Largest Digit in a String
 <---------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 #QUESTION NUMBER : 557. Reverse Words in a String III
+<---------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+#QUESTION NUMBER : 2399. Check Distances Between Same Letters
+
