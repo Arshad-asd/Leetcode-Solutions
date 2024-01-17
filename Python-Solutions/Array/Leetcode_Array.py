@@ -623,3 +623,9 @@ class Solution:
         return max(res)
         
 '''--------------------------------------------------------------------------------------------'''
+#QUESTION NUMBER  : 2433. Find The Original Array of Prefix Xor
+class Solution:
+    def findArray(self, pref: List[int]) -> List[int]:
+        res = [pref[0]] + [pref[i]^pref[i-1] for i in range(1,len(pref))]
+        return res
+'''--------------------------------------------------------------------------------------------'''
