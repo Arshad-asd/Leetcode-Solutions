@@ -629,3 +629,10 @@ class Solution:
         res = [pref[0]] + [pref[i]^pref[i-1] for i in range(1,len(pref))]
         return res
 '''--------------------------------------------------------------------------------------------'''
+#QUESTION NUMBER  : 1863. Sum of All Subset XOR Totals
+class Solution:
+    def subsetXORSum(self, nums: List[int]) -> int:
+        res =0
+        for x in nums:
+            res |= x
+        return res*(2**(len(nums)-1))
