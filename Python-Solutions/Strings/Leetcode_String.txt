@@ -680,3 +680,9 @@ step-5:if index+dis+1 > len(s)-1 or s[index+dis+1] != letter:: It checks if the 
 step-6return True: If the loop completes without returning False, it means the string is well-spaced, and the method returns True.
 
 Overall, this code checks the well-spacing condition for each unique character in the string based on the provided distances. If any character violates the condition, it returns False; otherwise, it returns True.
+
+
+<---------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+#QUESTION NUMBER : 1370. Increasing Decreasing String
+
