@@ -25,3 +25,27 @@ class Solution:
         return result
 
 '''--------------------------------------------------------------------------------------------'''
+# QUESTION NO: 450. Delete Node in a BST
+
+class Solution:
+    def deleteNode(self, root: Optional[TreeNode], key: int) -> Optional[TreeNode]:
+        if root == None:
+            return 
+        elif root.val > key:
+            root.left = self.deleteNode(root.left,key)
+        elif root.val < key:
+            root.right = self.deleteNode(root.right,key)
+        else:
+            if root.left == None:
+                return root.right
+            if root.right == None:
+                return root.left
+            else:
+                succ = self.getsucs(root.right,key)
+                root.val = succ
+                root.right = self.deleteNode(root.right,succ)
+        return root
+    def getsucs(self,cur,key):
+        while cur.left is not None:
+            cur = cur.left
+        return cur.val
