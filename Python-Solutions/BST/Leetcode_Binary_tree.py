@@ -64,3 +64,23 @@ class Solution:
         elif root.val < val:
             root.right = self.insertIntoBST(root.right,val)
         return root 
+
+'''--------------------------------------------------------------------------------------------'''
+
+# QUESTION NO: 938. Range Sum of BST
+class Solution:
+    def rangeSumBST(self, root: Optional[TreeNode], low: int, high: int) -> int:
+        def bfs_traverse(node):
+            if node is not None:
+                nonlocal sums
+                if low <= node.val <= high:
+                    sums += node.val
+                if node.val > low:
+                   bfs_traverse(node.left)
+                if node.val < high:
+                    bfs_traverse(node.right)
+        sums = 0
+        bfs_traverse(root)
+        return sums
+
+'''--------------------------------------------------------------------------------------------'''
