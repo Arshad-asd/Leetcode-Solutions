@@ -84,3 +84,27 @@ class Solution:
         return sums
 
 '''--------------------------------------------------------------------------------------------'''
+# QUESTION NO: 94. Binary Tree Inorder Traversal
+class Solution:
+    def inorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
+        result = []
+        if root is not None:
+            result +=self.inorderTraversal(root.left)
+            result.append(root.val)
+            result +=self.inorderTraversal(root.right)
+        return result
+
+'''--------------------------------------------------------------------------------------------'''
+# QUESTION NO: 102. Binary Tree Level Order Traversal
+class Solution:
+    def levelOrder(self, root: Optional[TreeNode]) -> List[List[int]]:
+        result = []
+        self.dfs(root,0,result)
+        return result
+    def dfs(self,node,level,result):
+        if node is not None:
+            if len(result) <= level:
+                result.append([])
+            result[level].append(node.val)
+            self.dfs(node.left,level+1,result)
+            self.dfs(node.right,level+1,result)
