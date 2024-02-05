@@ -108,3 +108,17 @@ class Solution:
             result[level].append(node.val)
             self.dfs(node.left,level+1,result)
             self.dfs(node.right,level+1,result)
+'''--------------------------------------------------------------------------------------------'''
+# QUESTION NO: 104. Maximum Depth of Binary Tree
+class Solution:
+    def maxDepth(self, root: Optional[TreeNode]) -> int:
+        depth = 0
+        def dfs(node,level):
+            if node is None:
+                return level
+            left_level = dfs(node.left,level+1)
+            right_level = dfs(node.right,level+1)
+            return max(left_level,right_level)
+               
+        return dfs(root,0)
+  
