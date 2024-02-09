@@ -260,3 +260,28 @@ class Solution:
              prev.next = current.next
          return head
 '''--------------------------------------------------------------------------------------------'''
+# QUESTION NO: 147. Insertion Sort List
+class Solution:
+    def insertionSortList(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        if not head or not head.next:
+            return head
+        
+        dummy = ListNode(float('-inf'))
+        dummy.next = head
+        last_sorted = head
+        
+        while last_sorted.next:
+            if last_sorted.next.val < last_sorted.val:
+                prev = dummy
+                while prev.next.val < last_sorted.next.val:
+                    prev = prev.next
+                
+                temp = last_sorted.next
+                last_sorted.next = temp.next
+
+                temp.next = prev.next
+                prev.next = temp
+            else:
+                last_sorted = last_sorted.next
+        
+        return dummy.next
