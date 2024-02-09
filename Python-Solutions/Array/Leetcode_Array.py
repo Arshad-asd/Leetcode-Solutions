@@ -660,4 +660,34 @@ class Solution:
             else:
                 left = mid+1
         return left
-                
+
+#QUESTION NUMBER  : 912. Sort an Array
+class Solution:
+    def sortArray(self, nums: List[int]) -> List[int]:
+        if len(nums) >1:
+            mid = len(nums)//2
+            left = nums[mid:]
+            right = nums[:mid]
+            self.sortArray(left)
+            self.sortArray(right)
+            i = 0
+            j = 0
+            k = 0
+            while i < len(left) and j < len(right):
+                if left[i] < right[j]:
+                    nums[k] = left[i]
+                    k += 1
+                    i += 1
+                else:
+                    nums[k] = right[j]
+                    k += 1
+                    j += 1
+            while i < len(left):
+                nums[k] = left[i]
+                k += 1
+                i += 1
+            while j < len(right):
+                nums[k] = right[j]
+                k += 1
+                j += 1
+        return nums
