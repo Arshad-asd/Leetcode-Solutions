@@ -691,3 +691,15 @@ class Solution:
                 k += 1
                 j += 1
         return nums
+
+#QUESTION NUMBER  : 692. Top K Frequent Words
+class Solution:
+    def topKFrequent(self, words: List[str], k: int) -> List[str]:
+        seen = {}
+        for key in words:
+            if key in seen:
+                seen[key] +=1
+            else:
+                seen[key] =1
+        sorted_words = sorted(seen.keys(), key=lambda x: (-seen[x], x))
+        return sorted_words[:k]
