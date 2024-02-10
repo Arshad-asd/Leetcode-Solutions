@@ -703,3 +703,9 @@ class Solution:
                 seen[key] =1
         sorted_words = sorted(seen.keys(), key=lambda x: (-seen[x], x))
         return sorted_words[:k]
+
+#QUESTION NUMBER  : 215. Kth Largest Element in an Array
+class Solution:
+    def findKthLargest(self, nums: List[int], k: int) -> int:
+        sorted_nums = sorted(nums)
+        return sorted_nums[-k]
