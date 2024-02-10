@@ -502,3 +502,19 @@ class Solution:
                 s.remove(letter)
                 result += letter
         return result
+
+#QUESTION NUMBER : 451. Sort Characters By Frequency
+class Solution:
+    def frequencySort(self,s: str) -> str:
+        seen = {}
+        result = ''
+        for key in s:
+            if key in seen:
+                seen[key] +=1
+            else:
+                seen[key] = 1
+        sorted_freq = sorted(seen.keys(),key=lambda items: (-seen[items],items))
+        for key in sorted_freq:
+            result += key*seen[key]
+        return result
+        
