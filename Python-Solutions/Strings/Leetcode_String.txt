@@ -689,3 +689,6 @@ Overall, this code checks the well-spacing condition for each unique character i
 
 #QUESTION NUMBER : 451. Sort Characters By Frequency
 
+<---------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+#QUESTION NUMBER :387. First Unique Character in a String
+
