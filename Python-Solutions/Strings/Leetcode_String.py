@@ -517,4 +517,17 @@ class Solution:
         for key in sorted_freq:
             result += key*seen[key]
         return result
-        
+
+ #QUESTION NUMBER :387. First Unique Character in a String
+class Solution:
+    def firstUniqChar(self, s: str) -> int:
+        seen = {}
+        for key in s:
+            if key in seen:
+                seen[key] +=1
+            else:
+                seen[key] = 1
+        for i,key in enumerate(s):
+            if seen[key] == 1:
+                return i
+        return -1
