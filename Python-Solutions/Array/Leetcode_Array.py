@@ -709,3 +709,22 @@ class Solution:
     def findKthLargest(self, nums: List[int], k: int) -> int:
         sorted_nums = sorted(nums)
         return sorted_nums[-k]
+
+
+#QUESTION NUMBER  : 2053. Kth Distinct String in an Array
+class Solution:
+    def kthDistinct(self, arr: List[str], k: int) -> str:
+        seen = {}
+        for key in arr:
+             if key in seen:
+                 seen[key] +=1
+             else:
+                 seen[key] = 1
+        sorted_arr = sorted(seen.keys(),key = lambda item:seen[item])
+        for i in arr:
+                if seen[i]==1:
+                    k-=1
+                    if k==0:
+                        return i
+        return ""
+
