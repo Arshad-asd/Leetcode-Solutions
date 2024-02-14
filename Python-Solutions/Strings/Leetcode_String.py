@@ -531,3 +531,12 @@ class Solution:
             if seen[key] == 1:
                 return i
         return -1
+
+ #QUESTION NUMBER : 1189. Maximum Number of Balloons
+class Solution:
+    def maxNumberOfBalloons(self, text: str) -> int:
+        count = {'b':0,'a':0,'l':0,"o":0,'n':0}
+        for key in text:
+            if key in count:
+                count[key] +=1
+        return min(count['b'],count['a'],count['l']//2,count['o']//2,count['n'])
