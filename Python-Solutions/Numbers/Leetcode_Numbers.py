@@ -312,3 +312,27 @@ class Solution:
            n = sum(int(digit) ** 2 for digit in str(n))
        return n == 1
 '''--------------------------------------------------------------------------------------------'''
+
+#QUESTION NUMBER  : 8. String to Integer (atoi)
+
+class Solution:
+    def myAtoi(self, s: str) -> int:
+        s = s.strip()  # Remove leading and trailing whitespace
+        if not s:
+            return 0
+        sign = 1
+        if s[0] == '-':
+            sign = -1
+            s = s[1:]
+        elif s[0] == '+':
+            s = s[1:]
+        res = ''
+        for char in s:
+            if char.isdigit():
+                res += char
+            else:
+                break
+        if res:
+            result = int(res) * sign
+            return max(min(result, 2**31 - 1), -2**31)  # Clamp result within the 32-bit integer range
+        return 0
