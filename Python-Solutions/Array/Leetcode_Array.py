@@ -736,3 +736,27 @@ class Solution:
             for j in range(i,len(arr),2):
                 result +=sum(arr[i:j+1])
         return result
+
+#QUESTION NUMBER  : 704. Binary Search
+class Solution:
+    def search(self, nums: List[int], target: int) -> int:
+        left = 0
+        right = len(nums)-1
+        while left <= right:
+            mid = (left + right)//2
+            if nums[mid] < target:
+                left = mid+1
+            elif nums[mid] > target:
+                right = mid -1
+            else:
+                return mid
+        return -1        
+
+#QUESTION NUMBER  : 2974. Minimum Number Game
+class Solution:
+    def numberGame(self, nums: List[int]) -> List[int]:
+        nums.sort()
+        for i in range(0,len(nums),2):
+            nums[i],nums[i+1] = nums[i+1],nums[i]
+        return nums
+        
