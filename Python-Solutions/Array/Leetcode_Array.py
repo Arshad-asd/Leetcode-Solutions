@@ -759,4 +759,13 @@ class Solution:
         for i in range(0,len(nums),2):
             nums[i],nums[i+1] = nums[i+1],nums[i]
         return nums
-        
+
+#QUESTION NUMBER  : 179. Largest Number
+class Solution:
+    def compare(self, x: str, y: str) -> int:
+        return int(str(y) + str(x)) - int(str(x) + str(y))
+
+    def largestNumber(self, nums: List[int]) -> str:
+        sorted_nums = sorted(nums,key=cmp_to_key(self.compare))
+        ans = ''.join(str(i) for i in sorted_nums)
+        return ans if ans[0] != '0' else '0'
