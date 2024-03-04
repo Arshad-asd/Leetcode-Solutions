@@ -769,3 +769,11 @@ class Solution:
         sorted_nums = sorted(nums,key=cmp_to_key(self.compare))
         ans = ''.join(str(i) for i in sorted_nums)
         return ans if ans[0] != '0' else '0'
+
+#QUESTION NUMBER  : 75. Sort Colors
+class Solution:
+    def sortColors(self, nums: List[int]) -> None:
+        for i in range(len(nums)):
+            for j in range(len(nums)-i-1):
+                if nums[j] > nums[j+1]:
+                    nums[j],nums[j+1] = nums[j+1],nums[j]
