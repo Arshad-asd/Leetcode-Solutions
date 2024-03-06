@@ -551,3 +551,25 @@ class Solution:
             if word[0] in vowels and word[-1] in vowels:  
                 count += 1
         return count
+#QUESTION NUMBER : 345. Reverse Vowels of a String
+class Solution:
+    def reverseVowels(self, s: str) -> str:
+        vowels = {'a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'}
+        string = list(s)
+        left, right = 0, len(string) - 1
+        
+        while left < right:
+            if string[left] in vowels and string[right] in vowels:
+                string[left], string[right] = string[right], string[left]
+                left += 1
+                right -= 1
+            elif string[left] in vowels:
+                right -= 1
+            elif string[right] in vowels:
+                left += 1
+            else:
+                left += 1
+                right -= 1
+        
+        return ''.join(string)
+ 
