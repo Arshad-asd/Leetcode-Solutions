@@ -789,3 +789,17 @@ class Solution:
             else:
                 anagrams[sorted_word] = [word]
         return list(anagrams.values())
+
+#QUESTION NUMBER  : 3005. Count Elements With Maximum Frequency
+class Solution:
+    def maxFrequencyElements(self, nums: List[int]) -> int:
+        frequency = {}
+        max_freq = 0
+        
+        for num in nums:
+            frequency[num] = frequency.get(num, 0) + 1
+            max_freq = max(max_freq, frequency[num])
+        
+        count_max_freq = sum(1 for freq in frequency.values() if freq == max_freq)
+        
+        return max_freq * count_max_freq
