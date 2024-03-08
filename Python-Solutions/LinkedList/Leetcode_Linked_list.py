@@ -220,7 +220,7 @@ class Solution:
                     current = current.next
                 else:
                     current = current.next
-            first = first.next
+            first = first.next  
         return head
 '''--------------------------------------------------------------------------------------------'''
 # QUESTION NO: 1290. Convert Binary Number in a Linked List to Integer
