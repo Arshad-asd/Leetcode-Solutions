@@ -573,3 +573,15 @@ class Solution:
         
         return ''.join(string)
  
+#QUESTION NUMBER : 791. Custom Sort String
+class Solution:
+    def customSortString(self, order: str, s: str) -> str:
+        char_count = {char:s.count(char) for char in set(s)}
+        result =''
+        for char in order:
+            if char in char_count:
+                result += char*char_count[char]
+        for char in s:
+            if char not in order:
+                result +=char
+        return result
