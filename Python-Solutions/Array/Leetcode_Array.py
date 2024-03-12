@@ -803,3 +803,33 @@ class Solution:
         count_max_freq = sum(1 for freq in frequency.values() if freq == max_freq)
         
         return max_freq * count_max_freq
+#QUESTION NUMBER  :225. Implement Stack using Queues
+class MyStack:
+    def __init__(self):
+        self.queue1 = []
+        self.queue2 = []
+
+    def push(self, x: int) -> None:
+        self.queue1.append(x)
+
+    def pop(self) -> int:
+        if not self.queue1:
+            return None
+        while len(self.queue1) > 1:
+            self.queue2.append(self.queue1.pop(0))
+        popped_element = self.queue1.pop(0)
+        self.queue1, self.queue2 = self.queue2, self.queue1
+        return popped_element
+
+    def top(self) -> int:
+        if not self.queue1:
+            return None
+        while len(self.queue1) > 1:
+            self.queue2.append(self.queue1.pop(0))
+        top_element = self.queue1[0]
+        self.queue2.append(self.queue1.pop(0))
+        self.queue1, self.queue2 = self.queue2, self.queue1
+        return top_element
+
+    def empty(self) -> bool:
+        return not self.queue1
