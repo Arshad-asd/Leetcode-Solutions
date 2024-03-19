@@ -585,3 +585,19 @@ class Solution:
             if char not in order:
                 result +=char
         return result
+
+#QUESTION NUMBER  : 14. Longest Common Prefix
+class Solution:
+    def longestCommonPrefix(self, strs: List[str]) -> str:
+        if not strs:
+            return ""
+        
+        prefix = strs[0] 
+        
+        for s in strs[1:]:
+            while s[:len(prefix)] != prefix:
+                prefix = prefix[:-1]  
+                if not prefix:
+                    return ""  
+        
+        return prefix
