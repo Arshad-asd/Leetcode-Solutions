@@ -601,3 +601,17 @@ class Solution:
                     return ""  
         
         return prefix
+#QUESTION NUMBER  : 20. Valid Parentheses
+class Solution:
+    def isValid(self, s: str) -> bool:
+        stack = []
+        open_braces = '({['
+        closed_braces = ']})'
+        bracket_pairs = {'}':'{',')':'(',']':'['}
+        for char in s:
+            if char in open_braces:
+                stack.append(char)
+            elif char in closed_braces:
+                if not stack or stack.pop() != bracket_pairs[char]:
+                    return False
+        return not stack
