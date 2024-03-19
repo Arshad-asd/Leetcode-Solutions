@@ -705,3 +705,5 @@ Overall, this code checks the well-spacing condition for each unique character i
 #QUESTION NUMBER : 791. Custom Sort String
 <---------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 #QUESTION NUMBER  : 14. Longest Common Prefix
+<---------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+#QUESTION NUMBER  : 20. Valid Parentheses
